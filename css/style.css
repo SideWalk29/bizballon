@@ -1,0 +1,258 @@
+/***************   ****************/
+/*  Reset de la pagina  */
+* {
+    box-sizing:border-box;
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --colortextodestacado: indigo;
+  }
+/* ejemplo uso variables css*/
+ /* contenedor h2{
+   color: var(--colortextodestacado);
+  }*/
+
+/*************** ESTILOS HEADER****************/
+
+
+
+/*************** ESTILOS TIENDA ****************/
+#tienda .filtros{
+
+
+}
+#tienda input{
+    display: none;
+}
+#tienda .tag{
+    font-size: 20px;
+    margin: 1.5em 0px;
+    padding: 5px 25px;
+    border-radius: 50px;
+    display: inline-block;
+    cursor: pointer;
+    background: #efefef;
+    text-decoration: none;
+    color:var(--colortextodestacado);
+    border: 1px solid #ccc;
+}
+#tienda .grid-articulo img{
+    max-width: 300px;
+    width: 300px;
+    height: 300px;
+    transition: all .4s ease-in-out;
+}
+/*filtros CSS */
+
+#tienda #camiseta:checked ~ .images > img:not([class*='camiseta']),
+#tienda #shorts:checked ~ .images > img:not([class*='shorts']),
+#tienda #sudadera:checked ~ .images > img:not([class*='sudadera']),
+#tienda #calcetines:checked ~ .images > img:not([class*='calcetines']){
+    width: 0px;
+    height: 0px;
+}
+
+#tienda #all:checked ~ .all,
+#tienda #camiseta:checked ~ .tag1, 
+#tienda #shorts:checked ~ .tag2,
+#tienda #sudadera:checked ~ .tag3,
+#tienda #sudadera:checked ~ .tag4{
+    background-color: #333333;      
+    color: white;
+} 
+
+ /* estilos de la galeria de productos */
+ #tienda .grid-contenedor {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 10px;
+    margin-left: 25%;
+    margin-right: 25%;
+   }
+  
+  #tienda .grid-articulo {
+    width: 100%;
+  }
+  
+  #tienda .grid-articulo img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+
+
+
+
+
+
+  /*************** ESTILOS CLUBS ****************/
+  #clubs .button-container{ 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  #clubs .button{
+    display: flex;
+    width: 20rem;
+    height: 20rem;
+    border-radius: 10%;
+    background-position: right;
+    justify-content: center;
+    text-align: left;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 2rem;
+    transition: transform 0.2s;
+    border: none;
+    color: white;
+  }
+
+  #clubs .button:hover{
+    transform: scale(1);
+  }
+
+  #clubs .button1{ 
+    background-image: url(/img/equipomasculino.jpg);
+  }
+  #clubs .button2{ 
+    background-image: url(/img/equipofemenino.jpg);
+  }
+  #clubs .button3{ 
+    background-image: url(/img/equipojuvenil.jpg);
+  }
+  #clubs .button4{ 
+    background-image: url(/img/equipocadete.jpg);
+  }
+  #clubs .button5{ 
+    background-image: url(/img/equipoinfantil.jpg);
+  }
+  #clubs .button6{ 
+    background-image: url(/img/equipoalevin.jpg);
+  }
+
+
+
+/* Index.html */
+
+body > * {
+    padding: 20px 0 20px 0;
+}
+
+
+.anouncementbar {
+    color:white;
+    background-color: rgb(94, 151, 255);
+    padding: 10px 0 10px 0;
+    text-align: center;
+    font-size: 25px;
+}
+
+header {
+    justify-content: space-around;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px 0 10px 0;
+}
+
+header img {
+    height: 100px;
+    width: 0 auto;
+    display: flex;
+    flex-direction: row;
+}
+
+.ul1 {
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+}
+
+.ul1 a {
+    text-decoration: none;
+    color: black;
+}
+
+.noti1 {
+    padding: 10px 0 10px 0;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: rgb(182, 182, 255);
+    text-align: center;
+}
+
+main .branding {
+    border-radius: 8px;
+    height: 300px;
+    display:block;
+    margin: 0 auto 20px;
+}
+
+main div img {
+    border-radius: 8px;
+    border: 1px solid black;
+}
+
+main p {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+main h3 {
+    margin-bottom: 20px;
+    margin-top:20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.noticias {
+    text-align: center;
+    margin: 0 50px 0 50px;
+}
+
+.p1 {
+    margin-bottom: 20px;
+    font-style: italic;
+    font-weight: bold;
+    color:rgba(0, 0, 0, 0.548);
+}
+
+.p2 {
+    margin-top: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+}
+
+
+
+footer {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: rgb(229, 229, 255);
+    padding-bottom: 30px;
+}
+
+footer h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+footer img {
+    height:50px;
+    width: 0 auto;
+    margin-bottom: 30px;
+}
+
+.social_media {
+    display: flex;
+    justify-content: space-around;
+}
+
+
+.copyright {
+    text-align: center;
+}
