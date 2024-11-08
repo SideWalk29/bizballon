@@ -9,59 +9,99 @@
 	
 <!--  HOJAS DE ESTILO -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"/>
-	<link rel="stylesheet" href="css/style.css" />
+	<link rel="stylesheet" href="css/style-ok.css" />
 
  <!--  FUENTES-->
+ <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
 </head>
-<body>
-    <header>
-        <nav>
+<body id="tienda">
+<div id="main">
+	 <header>
 
-        </nav>
-    </header>
-    <div id="tienda">
-       <h1>Tienda </h1>
-       <div class="filtros">
-        <h2>Productos</h2>
-    <!--    botones de filrado por categorias -->
+      </header>
+          <h1>Tienda </h1>
+       
+         <h2>Productos</h2>
+         
+          <div class="filtrosgaleria">
+     <!--    botones de filrado por categorias -->
+ 
+           <input type="radio" id="todos" name="button" checked><label for="todos">todos</label>
+           <input type="radio" id="camiseta" name="button"><label for="camiseta">camiseta</label>
+           <input type="radio" id="shorts" name="button"><label for="shorts">shorts</label>
+           <input type="radio" id="sudadera" name="button"><label for="sudadera">sudadera</label>
+           <input type="radio" id="calcetines" name="button"><label for="calcetines">calcetines</label>
+       
+             <div class="galeria">
+             
+             <figure class="card camiseta camiseta1">
 
-        <input type="radio" id="camiseta" name="button" checked>
-        <input type="radio" id="shorts" name="button">
-        <input type="radio" id="sudadera" name="button">
-        <input type="radio" id="calcetines" name="button">
-        
-        <label class="tag all" for="all">todos</label>
-        <label class="tag tag1" for="camiseta">camiseta</label>
-        <label class="tag tag2" for="shorts">shorts</label>
-        <label class="tag tag3" for="sudadera">sudadera</label>
-        <label class="tag tag4" for="calcetines">calcetines</label>
-        <br>
-
-       </div>
-            <div class="grid-contenedor">
-                <div class="grid-articulo"><img src="images/camiseta_1.jpg" alt="modelo camiseta niño con logo de BBF" title="Camiseta niño BBF" class="camiseta"></div>
-                <div class="grid-articulo"><img src="images/camiseta_2.jpg" alt="modelo camiseta mujer con logo de BBF" title="Camiseta mujer BBF" class="camiseta"></div>
-                <div class="grid-articulo"><img src="images/camiseta_3.jpg" alt="modelo camiseta hombre con logo de BBF" title="Camiseta hombre BBF" class="camiseta"></div>
-
-                <div class="grid-articulo"><img src="images/shorts_1.jpg" alt="modelo shorts niño con logo de BBF" title="Shorts niño BBF" class="shorts"></div>
-                <div class="grid-articulo"><img src="images/shorts_2.jpg" alt="modelo shorts mujer con logo de BBF" title="Shorts mujer BBF" class="shorts"></div>
-                <div class="grid-articulo"><img src="images/shorts_2.jpg" alt="modelo shorts hombre con logo de BBF" title="Shorts hombre BBF" class="shorts"></div>
-
-                <div class="grid-articulo"><img src="images/sudadera_1.jpg" alt="modelo sudadera niño con logo de BBF" title="Sudadera niño BBF" class="sudadera"></div>
-                <div class="grid-articulo"><img src="images/sudadera_2.jpg" alt="modelo sudadera mujer con logo de BBF" title="Sudadera mujer BBF" class="sudadera"></div>
-                <div class="grid-articulo"><img src="images/sudadera_3.jpg" alt="modelo sudadera hombre con logo de BBF" title="Sudadera hombre BBF" class="sudadera"></div>
-
-                <div class="grid-articulo"><img src="images/calcetines_1.jpg" alt="modelo calcetines niño con logo de BBF" title="Calcetines niño BBF" class="calvcetines"></div>
-                <div class="grid-articulo"><img src="images/calcetines_2.jpg" alt="modelo calcetines adulto con logo de BBF" title="Calcetines adulto BBF" class="calvcetines"></div>
-
+                <div><img src="./Images/camiseta_1.jpg" alt="modelo camiseta niño con logo de BBF" title="Camiseta niño BBF" class="card-imagen"></div>
+			 	<div class="oferta">
+                          <p>Ahora en oferta</p>
+                 </div>
+              
+                 <figcaption class="card-caption">camiseta BBF niño</figcaption>
+             </figure>
+             <figure class="card camiseta">  
+                <img src="./Images/camiseta_2.png" alt="modelo camiseta mujer con logo de BBF" title="Camiseta mujer BBF" class="card-imagen">
+                 <figcaption class="card-caption">camiseta BBF mujer </figcaption>
+             </figure>
+              <figure class="card camiseta">  
+                <img src="./Images/camiseta_3.png" alt="modelo camiseta hombre con logo de BBF" title="Camiseta hombre BBF" class="card-imagen">
+                 <figcaption class="card-caption">camiseta BBF hombre</figcaption>
+             </figure>
+                
+             <figure class="card shorts">
+                 <img src="./images/shorts_1.jpg" alt="modelo shorts niño con logo de BBF" title="Shorts niño BBF" class="card-imagen">
+                  <figcaption class="card-caption">shorts BBF niño</figcaption>
+             </figure>	
+                 
+              <figure class="card shorts">	
+                 <img src="./Images/shorts_2.jpg" alt="modelo shorts mujer con logo de BBF" title="Shorts mujer BBF" class="card-imagen">
+                   <figcaption class="card-caption">shorts BBF mujer</figcaption>
+             </figure>
+                 
+              <figure class="card shorts">	
+                 <img src="./Images/shorts_3.png" alt="modelo shorts hombre con logo de BBF" title="Shorts hombre BBF" class="card-imagen">
+                   <figcaption class="card-caption">shorts BBF hombre</figcaption>
+              </figure>	
+                 
+              <figure class="card sudadera">
+                 <img src="./images/sudadera_1.jpg" alt="modelo sudadera niño con logo de BBF" title="Sudadera niño BBF" class="card-imagen">
+                     <figcaption class="card-caption">sudadera BBF niño</figcaption>
+              </figure>	
+                 
+             <figure class="card sudadera">	
+                 <img src="./images/sudadera_2.png" alt="modelo sudadera mujer con logo de BBF" title="Sudadera mujer BBF" class="card-imagen">
+                     <figcaption class="card-caption">sudadera BBF mujer</figcaption>
+              </figure>	
+                 
+             <figure class="card sudadera">	
+                 <img src="./images/sudadera_3.png" alt="modelo sudadera hombre con logo de BBF" title="Sudadera hombre BBF" class="card-imagen">
+                     <figcaption class="card-caption">sudadera BBF hombre</figcaption>
+              </figure>	
+                 
+                 
+             <figure class="card calcetines">
+                <img src="./images/calcetines_1.jpg" alt="modelo calcetines niño con logo de BBF" title="Calcetines niño BBF" class="card-imagen">
+                    <figcaption class="card-caption">calcetines BBF niño</figcaption>
+              </figure>	
+                
+               <figure class="card calcetines">
+                <img src="./images/calcetines_2.jpg" alt="modelo calcetines adulto con logo de BBF" title="Calcetines adulto BBF" class="card-imagen">
+                    <figcaption class="card-caption">calcetines BBF adulto</figcaption>
+              </figure>	
+ 
+                
+            </div>
         </div>
-
-
-    </div>
-
-<footer>
-    Basauri balonmano federación
-</footer>
+ 
+     </div>
+ 
+ <footer>
+    <h4> Basauri balonmano federación</h4>
+ </footer>
 </body>
 </html>

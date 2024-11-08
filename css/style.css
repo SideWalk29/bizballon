@@ -6,144 +6,262 @@
     margin: 0;
 }
 
+
 :root {
-    --colortextodestacado: indigo;
-  }
+  --colortextodestacado: indigo;
+  --colorbackground: rgb(94, 151, 255);
+}
 /* ejemplo uso variables css*/
- /* contenedor h2{
-   color: var(--colortextodestacado);
-  }*/
+/* contenedor h2{
+ color: var(--colortextodestacado);
+}*/
+
 
 /*************** ESTILOS HEADER****************/
 
 
 
 /*************** ESTILOS TIENDA ****************/
-#tienda .filtros{
+#tienda{
+  display:flex;
+  flex-direction: column;
+  height: 100vh;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
 
+}
+#tienda #main{
+	text-align:center;
+	padding: 20px;
 
 }
-#tienda input{
-    display: none;
+#tienda h1, h2{
+    padding: 20px;
+	font-size:2rem;
+	font-weight: bold;
 }
-#tienda .tag{
-    font-size: 20px;
-    margin: 1.5em 0px;
-    padding: 5px 25px;
-    border-radius: 50px;
-    display: inline-block;
-    cursor: pointer;
-    background: #efefef;
-    text-decoration: none;
-    color:var(--colortextodestacado);
-    border: 1px solid #ccc;
-}
-#tienda .grid-articulo img{
-    max-width: 300px;
-    width: 300px;
-    height: 300px;
-    transition: all .4s ease-in-out;
+#tienda h1, h2{
+	color:var(--colortextodestacado);
+	margin:5px;	
 }
 /*filtros CSS */
+#tienda .filtrosgaleria{
+  padding: 2em 1rem;
+  text-align: center;
 
-#tienda #camiseta:checked ~ .images > img:not([class*='camiseta']),
-#tienda #shorts:checked ~ .images > img:not([class*='shorts']),
-#tienda #sudadera:checked ~ .images > img:not([class*='sudadera']),
-#tienda #calcetines:checked ~ .images > img:not([class*='calcetines']){
-    width: 0px;
-    height: 0px;
+}
+#tienda [type="radio"]{
+    display: none;
+}
+#tienda label{
+  padding: 0.75rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: 0.25s;
+  font-size:1.2rem;
+}
+#tienda label:hover{
+   background-color:#e1e7ec;
 }
 
-#tienda #all:checked ~ .all,
-#tienda #camiseta:checked ~ .tag1, 
-#tienda #shorts:checked ~ .tag2,
-#tienda #sudadera:checked ~ .tag3,
-#tienda #sudadera:checked ~ .tag4{
-    background-color: #333333;      
-    color: white;
+#tienda [type="radio"]:checked + label {
+    background-color: rgb(177, 210, 248);
+}
+
+
+#tienda [type="radio"]:nth-of-type(2):checked ~ .galeria .card:not(.camiseta),
+#tienda [type="radio"]:nth-of-type(3):checked ~ .galeria .card:not(.shorts),
+#tienda [type="radio"]:nth-of-type(4):checked ~ .galeria .card:not(.sudadera),
+#tienda [type="radio"]:nth-of-type(5):checked ~ .galeria .card:not(.calcetines)
+{
+  display: none;
+}
+ /* estilos de la galeria de productos */
+#tienda  .galeria{
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, 300px);
+  grid-auto-rows: 1fr;
+  grid-gap: 1rem;
+  padding: 0.5rem;
+  margin-top: 1rem;
+}
+
+#tienda .oferta p {
+  text-align: center;
+  letter-spacing: 1.5px;
+  
+}
+/* mostrar mensaje oferta on hover**/
+#tienda figure .oferta{
+  opacity:0;
+  font-size: 0.8rem;
+}
+
+#tienda figure:hover .oferta {
+  opacity: 0.8;
+  transition: all 0.5s ease;
+
+  p {
+	color:blue;
+	background-color:Aquamarine;
+    transform: scale(1.8);
+    transition: all 0.9s ease;
+  }
+}
+ #tienda .card{
+  margin: 0;
+  color: var(--colortextodestacado);
+  border-radius: 0.25rem;
+  overflow: hidden;
+  box-shadow: 0 0 10px silver;
+  transition: box-shadow 0.35s;
+  border: 1p solid  lightgrey;
+}
+
+  
+ #tienda .card:hover{
+  box-shadow: 0 0 25px #0009;
+}
+ 
+ #tienda .card-imagen{
+  width: 100%;
+  object-fit: cover;
 } 
 
- /* estilos de la galeria de productos */
- #tienda .grid-contenedor {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    grid-gap: 10px;
-    margin-left: 25%;
-    margin-right: 25%;
-   }
-  
-  #tienda .grid-articulo {
-    width: 100%;
-  }
-  
-  #tienda .grid-articulo img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-  }
-  
+#tienda .card-caption{
+  font-weight: bold;
+  font-variant: small-caps;
+  padding: 0.5rem;
+  text-align: center;
+  color: var(--colortextodestacado);
+}
 
+#tienda footer {
+  background-color: var(--colorbackground);
+  width: 100%;
+  height: 15vh;
+  color: white;
+  padding:20px;
 
+}
 
 
 
 
   /*************** ESTILOS CLUBS ****************/
+
+  #clubs{
+    width: 100%; 
+    height: 100%; 
+    padding: 20px; 
+    background-color: #2999e9; 
+}
+
   #clubs .button-container{ 
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    text-decoration: none;
   }
 
   #clubs .button{
+    position: relative;
     display: flex;
-    width: 20rem;
-    height: 20rem;
+    width: 100%;
+    height: 15rem;
     border-radius: 10%;
-    background-position: right;
+    background-position: 1%;
     justify-content: center;
-    text-align: left;
-    text-decoration: none;
+    text-align: center;
     cursor: pointer;
-    font-size: 2rem;
-    transition: transform 0.2s;
+    text-decoration: none;
     border: none;
-    color: white;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-image:linear-gradient(to right, rgba(81, 81, 247, 0.5), rgba(90, 90, 247, 0.9));
+    overflow: hidden;
   }
 
   #clubs .button:hover{
-    transform: scale(1);
+    transform: scale(1.1);
+    opacity: 5;
+    transition: 2s;
   }
 
-  #clubs .button1{ 
-    background-image: url(/img/equipomasculino.jpg);
-  }
-  #clubs .button2{ 
-    background-image: url(/img/equipofemenino.jpg);
-  }
-  #clubs .button3{ 
-    background-image: url(/img/equipojuvenil.jpg);
-  }
-  #clubs .button4{ 
-    background-image: url(/img/equipocadete.jpg);
-  }
-  #clubs .button5{ 
-    background-image: url(/img/equipoinfantil.jpg);
-  }
-  #clubs .button6{ 
-    background-image: url(/img/equipoalevin.jpg);
+  #clubs .button::before{
+    content:'';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 10%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.1; 
+    z-index: 1; 
+}
+
+#clubs .button:hover::before{
+  transition: 0.8s;
+  opacity: 10;
+}
+
+  #clubs .button1::before{ 
+    background-image: url(../img/equipomasculino.jpg);
   }
 
+  #clubs .button2::before{ 
+    background-image: url(../img/equipofemenino.jpg);
+
+  }
+  #clubs .button3::before{ 
+    background-image: url(../img/equipojuvenil.jpg);
+  }
+
+  #clubs .button4::before{ 
+    background-image: url(../img/equipocadete.jpg);
+  }
+
+  #clubs .button5::before{ 
+    background-image: url(../img/equipoinfantil.jpg);
+  }
+
+  #clubs .button6::before{ 
+    background-image: url(../img/equipoalevin.jpg);
+  }
+
+  #clubs .text-over{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 2;
+    color:white;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    font-size: 5rem;
+    text-align: center;
+}
+
+.button:hover .text-over{
+  transition: 0.2s;
+  opacity: 0; 
+}
 
 
-/* Index.html */
+/* Index.html | Homepage */
 
 body > * {
     padding: 20px 0 20px 0;
 }
 
-
-.anouncementbar {
+.index_anouncementbar {
     color:white;
     background-color: rgb(94, 151, 255);
     padding: 10px 0 10px 0;
@@ -151,7 +269,7 @@ body > * {
     font-size: 25px;
 }
 
-header {
+.index_header1 {
     justify-content: space-around;
     display: flex;
     flex-direction: row;
@@ -159,26 +277,24 @@ header {
     padding: 10px 0 10px 0;
 }
 
-header img {
+.index_header1 img {
     height: 100px;
     width: 0 auto;
-    display: flex;
-    flex-direction: row;
 }
 
-.ul1 {
+.index_ul1 {
     display:flex;
     justify-content: space-around;
     align-items: center;
     list-style: none;
 }
 
-.ul1 a {
+.index_ul1 a {
     text-decoration: none;
     color: black;
 }
 
-.noti1 {
+.index_noti1 {
     padding: 10px 0 10px 0;
     color: white;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -186,19 +302,19 @@ header img {
     text-align: center;
 }
 
-main .branding {
+.index_main .branding {
     border-radius: 8px;
     height: 300px;
     display:block;
     margin: 0 auto 20px;
 }
 
-main div img {
+.index_main div img {
     border-radius: 8px;
     border: 1px solid black;
 }
 
-main p {
+.index_main p {
     text-align: center;
     margin-bottom: 20px;
     font-size: 20px;
@@ -215,14 +331,14 @@ main h3 {
     margin: 0 50px 0 50px;
 }
 
-.p1 {
+.index_p1 {
     margin-bottom: 20px;
     font-style: italic;
     font-weight: bold;
     color:rgba(0, 0, 0, 0.548);
 }
 
-.p2 {
+.index_p2 {
     margin-top: 20px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 16px;
