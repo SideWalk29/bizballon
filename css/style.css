@@ -45,6 +45,10 @@
 	color:var(--colortextodestacado);
 	margin:5px;	
 }
+#tienda a{
+text-decoration:none;
+
+}
 /*filtros CSS */
 #tienda .filtrosgaleria{
   padding: 2em 1rem;
@@ -147,6 +151,129 @@
 
 }
 
+/*** estilos para el modal ***/
+#tienda .modal {
+  position: fixed;
+  min-height: 100vh;
+  width: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  z-index: 2;
+}
+
+#tienda .modal:not(:target) {
+  visibility: hidden;
+  transition-delay: 500ms;
+  transition-property: visibility;
+}
+
+#tienda .modal:target .modal-content {
+  transform: translateY(100vh);
+  animation: 500ms ease-in-out slideUp forwards;
+}
+
+#tienda .modal:not(:target) .modal-content {
+  transform: translateY(0);
+  animation: 500ms ease-out slideDown forwards;
+}
+
+#tienda .modal:target .modal-overlay {
+  opacity: 0;
+  animation: 500ms linear fadeIn forwards;
+}
+
+#tienda .modal:not(:target) .modal-overlay {
+  opacity: 1;
+  animation: 500ms linear fadeOut forwards;
+}
+
+#tienda .modal-overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+  left: 0;
+}
+
+#tienda .modal-content {
+  transition: transform 1s;
+  background: #fff;
+  width: 75%;
+  position: relative;
+  margin: auto;
+  height: 75%;
+  padding: 48px 24px;
+  border-radius: 4px;
+  max-width: 1000px;
+}
+
+#tienda .modal-content  p{
+ font-size:1.8rem;
+ padding:4px;
+}
+
+#tienda .modal-images {
+  display:flex;
+  flex-direction:row;
+  justify-content: space-around;
+  padding:10px;
+}
+
+#tienda .imagen-modal:hover{
+  transform: scale(1.5);
+  transition: all 0.9s ease;
+  overflow: hidden;
+}
+#tienda .modal-close {
+  font-size: 36px;
+  text-decoration: none;
+  color: inherit;
+  position: absolute;
+  right: 24px;
+  top: 10px;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100vh);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(100vh);
+  }
+}
+
 
 
 
@@ -156,7 +283,7 @@
     width: 100%; 
     height: 100%; 
     padding: 20px; 
-    background-color: #2999e9; 
+    background-color: var(--colorbackground)
 }
 
   #clubs .button-container{ 
@@ -172,7 +299,7 @@
     position: relative;
     display: flex;
     width: 100%;
-    height: 15rem;
+    height: 10rem;
     border-radius: 10%;
     background-position: 1%;
     justify-content: center;
@@ -182,7 +309,7 @@
     border: none;
     background-size: 100%;
     background-repeat: no-repeat;
-    background-image:linear-gradient(to right, rgba(81, 81, 247, 0.5), rgba(90, 90, 247, 0.9));
+    background-image: var(--colorbackground);
     overflow: hidden;
   }
 
@@ -221,19 +348,19 @@
 
   }
   #clubs .button3::before{ 
-    background-image: url(../img/equipojuvenil.jpg);
+    background-image: url(../Images/);
   }
 
   #clubs .button4::before{ 
-    background-image: url(../img/equipocadete.jpg);
+    background-image: url(../Images/equipocadete.jpg);
   }
 
   #clubs .button5::before{ 
-    background-image: url(../img/equipoinfantil.jpg);
+    background-image: url(../Images/equipoinfantil.jpg);
   }
 
   #clubs .button6::before{ 
-    background-image: url(../img/equipoalevin.jpg);
+    background-image: url(../Images/equipoalevin.jpg);
   }
 
   #clubs .text-over{
@@ -243,33 +370,74 @@
     flex-direction: column;
     z-index: 2;
     color:white;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-decoration: none;
     font-size: 5rem;
     text-align: center;
 }
 
-.button:hover .text-over{
+ #clubs .button:hover .text-over{
   transition: 0.2s;
   opacity: 0; 
 }
 
+#clubs .teams{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 2rem;
+  gap: 1rem;
+  align-items: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 3rem;
+  line-height: 1.8;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* conocenos.html/estilo conocenos*/
+#conocenos {
+  width: 100%;
+  height: 100%;
+}
+#conocenos h1{
+  font-family: "Poppins", sans-serif;
+}
+#conocenos.botones{
+  display: flex;
+  justify-content: center;
+  color: blue;
+
+}
+#conocenos.quienes-somos{
+
+}
+
+#conocenos.mision-valores{
+  
+}
+#conocenos.historia{
+  
+}
 
 /* Index.html | Homepage */
 
-body > * {
+#index1 > * {
     padding: 20px 0 20px 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.index_anouncementbar {
+.anouncementbar {
+  font-weight: bold;
     color:white;
-    background-color: rgb(94, 151, 255);
+    background-color: #12A7EB;
     padding: 10px 0 10px 0;
     text-align: center;
-    font-size: 25px;
+    font-size: 20px;
 }
 
-.index_header1 {
+#index1 .header1 {
+  background-color: rgb(0, 64, 107);
     justify-content: space-around;
     display: flex;
     flex-direction: row;
@@ -277,82 +445,108 @@ body > * {
     padding: 10px 0 10px 0;
 }
 
-.index_header1 img {
+#index1 .header1 img {
     height: 100px;
     width: 0 auto;
 }
 
-.index_ul1 {
+#index1 .ul1 {
     display:flex;
     justify-content: space-around;
-    align-items: center;
     list-style: none;
+    margin-top:10px;
 }
 
-.index_ul1 a {
+#index1 .ul1 a {
+    margin-right: 20px;
+    font-size: 20px;
     text-decoration: none;
-    color: black;
+    color: white;
 }
 
-.index_noti1 {
+#index1 .ul1 a:hover {
+  transform: scale(0.95);
+  font-weight: bold;
+}
+
+#index1 .noti1 {
     padding: 10px 0 10px 0;
     color: white;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    background-color: rgb(182, 182, 255);
+    background-color: #65b6db;
     text-align: center;
 }
 
-.index_main .branding {
+#index1 .branding {
     border-radius: 8px;
     height: 300px;
     display:block;
     margin: 0 auto 20px;
 }
 
-.index_main div img {
+#index1 main div img {
     border-radius: 8px;
     border: 1px solid black;
+    height: 350px;
+    display: flex;
+    margin: 0 auto;
 }
 
-.index_main p {
+#index1 main p {
     text-align: center;
     margin-bottom: 20px;
     font-size: 20px;
 }
 
-main h3 {
-    margin-bottom: 20px;
-    margin-top:20px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+#index1 .noticias h3 {
+  text-align: center;
+  margin: 20px 50px 20px 50px;
 }
 
-.noticias {
-    text-align: center;
-    margin: 0 50px 0 50px;
+#index1 .noticias p {
+  margin: 0 20px 0 20px;
 }
 
-.index_p1 {
+
+
+#index1 .noticias .pdate {
     margin-bottom: 20px;
     font-style: italic;
     font-weight: bold;
     color:rgba(0, 0, 0, 0.548);
 }
 
-.index_p2 {
+#index1 .noticias .ptext {
     margin-top: 20px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 16px;
 }
 
+#index1 .noticias h4 {
+  text-align: center;
+  margin:15px 40% 0 40%;
+  background-color: rgb(0, 64, 107);
+  font-size: 16px;
+  border-style: none;
+  padding: 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition-duration: 500ms;
+  color: white;
+  text-decoration: none;
+}
 
+#index1 .noticias h4:hover {
+  transform: scale(0.95);
+  transition-duration: 500ms;
+}
 
 footer {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    background-color: rgb(229, 229, 255);
+    background-color: #65b6db;
     padding-bottom: 30px;
 }
 
 footer h2 {
+    color:white;
     text-align: center;
     margin-bottom: 30px;
 }
@@ -371,4 +565,75 @@ footer img {
 
 .copyright {
     text-align: center;
+}
+
+/* Index.html - Homepage | Response */
+
+
+@media screen and (max-width: 300px) {
+  background-color: red;
+}
+
+
+/*************** ESTILOS CONTACTO****************/
+#contacto.red-border{
+  border: solid red;
+  padding: 30px;
+}
+#contacto.body{
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 20px;
+}
+#contacto.section{
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0 , 0.1);
+  max-width: 800px;
+  margin: auto;
+}
+#contacto.h1{
+  color: #333;
+}
+#contacto.p, li{
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+#contacto.ul{
+  padding-left: 20px;
+}
+#contacto.body{
+  background-color: #f9f9f9;
+  padding: 20px;
+}
+#contacto.h1{
+  text-align: center;
+}
+#contaco.form{
+  max-width: 400px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+#contacto.label{
+  margin-top: 10px;
+}
+#contacto.input,select,textarea{
+  padding: 5px;
+  margin-top: 5px;
+  border: 1px solid #add;
+}
+#contacto.button{
+  margin-top: 15px;
+  background-color: #28a745;
+  color: #fff;
+  padding: 10px;  
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+#contacto.button:hover{
+  background-color: #218838;
 }

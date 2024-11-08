@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tienda</title>
     <!--  FAVICON -->
-    <link rel="shortcut icon" href="assets/img/css-icono.svg"  type="image/x-icon" />
+    <link rel="shortcut icon" href="assets/img/icono.svg"  type="image/x-icon" />
 	
 <!--  HOJAS DE ESTILO -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"/>
-	<link rel="stylesheet" href="css/style-ok.css" />
+	<link rel="stylesheet" href="css/style.css" />
 
  <!--  FUENTES-->
  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
@@ -34,27 +34,32 @@
            <input type="radio" id="calcetines" name="button"><label for="calcetines">calcetines</label>
        
              <div class="galeria">
-             
+
+            <a class="modal-btn" href="#modal1">
              <figure class="card camiseta camiseta1">
 
-                <div><img src="./Images/" alt="modelo camiseta niño con logo de BBF" title="Camiseta niño BBF" class="card-imagen"></div>
+                <div><img src="./Images/camiseta_1.jpg" alt="modelo camiseta niño con logo de BBF" title="Camiseta niño BBF" class="card-imagen"></div>
 			 	<div class="oferta">
                           <p>Ahora en oferta</p>
                  </div>
-              
                  <figcaption class="card-caption">camiseta BBF niño</figcaption>
              </figure>
+            </a>
+
+            <a class="modal-btn" href="#modal2">
              <figure class="card camiseta">  
                 <img src="./Images/camiseta_2.png" alt="modelo camiseta mujer con logo de BBF" title="Camiseta mujer BBF" class="card-imagen">
                  <figcaption class="card-caption">camiseta BBF mujer </figcaption>
              </figure>
+             </a>
+
               <figure class="card camiseta">  
                 <img src="./Images/camiseta_3.png" alt="modelo camiseta hombre con logo de BBF" title="Camiseta hombre BBF" class="card-imagen">
                  <figcaption class="card-caption">camiseta BBF hombre</figcaption>
              </figure>
                 
              <figure class="card shorts">
-                 <img src="./images/shorts_1.jpg" alt="modelo shorts niño con logo de BBF" title="Shorts niño BBF" class="card-imagen">
+                 <img src="./Images/shorts_1.jpg" alt="modelo shorts niño con logo de BBF" title="Shorts niño BBF" class="card-imagen">
                   <figcaption class="card-caption">shorts BBF niño</figcaption>
              </figure>	
                  
@@ -69,34 +74,64 @@
               </figure>	
                  
               <figure class="card sudadera">
-                 <img src="./images/sudadera_1.jpg" alt="modelo sudadera niño con logo de BBF" title="Sudadera niño BBF" class="card-imagen">
+                 <img src="./Images/sudadera_1.jpg" alt="modelo sudadera niño con logo de BBF" title="Sudadera niño BBF" class="card-imagen">
                      <figcaption class="card-caption">sudadera BBF niño</figcaption>
               </figure>	
                  
              <figure class="card sudadera">	
-                 <img src="./images/sudadera_2.png" alt="modelo sudadera mujer con logo de BBF" title="Sudadera mujer BBF" class="card-imagen">
+                 <img src="./Images/sudadera_2.png" alt="modelo sudadera mujer con logo de BBF" title="Sudadera mujer BBF" class="card-imagen">
                      <figcaption class="card-caption">sudadera BBF mujer</figcaption>
               </figure>	
                  
              <figure class="card sudadera">	
-                 <img src="./images/sudadera_3.png" alt="modelo sudadera hombre con logo de BBF" title="Sudadera hombre BBF" class="card-imagen">
+                 <img src="./Images/sudadera_3.png" alt="modelo sudadera hombre con logo de BBF" title="Sudadera hombre BBF" class="card-imagen">
                      <figcaption class="card-caption">sudadera BBF hombre</figcaption>
               </figure>	
                  
                  
              <figure class="card calcetines">
-                <img src="./images/calcetines_1.jpg" alt="modelo calcetines niño con logo de BBF" title="Calcetines niño BBF" class="card-imagen">
+                <img src="./Images/calcetines_1.jpg" alt="modelo calcetines niño con logo de BBF" title="Calcetines niño BBF" class="card-imagen">
                     <figcaption class="card-caption">calcetines BBF niño</figcaption>
               </figure>	
                 
                <figure class="card calcetines">
-                <img src="./images/calcetines_2.jpg" alt="modelo calcetines adulto con logo de BBF" title="Calcetines adulto BBF" class="card-imagen">
+                <img src="./Images/calcetines_2.jpg" alt="modelo calcetines adulto con logo de BBF" title="Calcetines adulto BBF" class="card-imagen">
                     <figcaption class="card-caption">calcetines BBF adulto</figcaption>
               </figure>	
  
                 
             </div>
         </div>
+        <!-- contenido ventanas modales-->
+        <section role="dialog" aria-labelledby="modal-title" class="modal" id="modal1">
+            <a class="modal-overlay" href="#" tabindex="-1"></a>
+        
+            <div class="modal-content">
+              <a title="Close modal" aria-label="Close modal" href="#" class="modal-close">&times; </a>
+              <h2 id="modal-title"> Camiseta niño</h2>
+              <div  class="modal-images">
+              <div><img src="./Images/camiseta_1.jpg" alt="modelo camiseta niño con logo de BBF" title="Camiseta niño BBF" class="imagen-modal" width="80%"></div>
+              <div><img src="./Images/camiseta_2.png" alt="modelo camiseta niño con logo de BBF" title="Camiseta niño BBF" class="imagen-modal" width="80%"></div>
+             </div>
+              <p>Camiseta de niño en tejido 100% algodón orgánico.</p>
+              <p> Algodón suave con tratamiento antipilling.</p>
+            </div>
+          </section>
+
+          <section role="dialog" aria-labelledby="modal-title" class="modal" id="modal2">
+            <a class="modal-overlay" href="#" tabindex="-1"></a>
+        
+            <div class="modal-content">
+              <a title="Close modal" aria-label="Close modal" href="#" class="modal-close">&times; </a>
+              <h2 id="modal-title"> Camiseta mujer</h2>
+              <div  class="modal-images">
+              <div><img src="./Images/camiseta_2.png" alt="modelo camiseta mujer con logo de BBF" title="Camiseta mujer BBF" class="imagen-modal" width="80%"></div>
+              <div><img src="./Images/camiseta_21.png" alt="modelo camiseta mujer con logo de BBF" title="Camiseta mujer BBF" class="imagen-modal" width="80%"></div>
+             </div>
+              <p>Camiseta de mujer en tejido 100% algodón orgánico.</p>
+              <p> Algodón suave con tratamiento antipilling.</p>
+            </div>
+          </section>
  
      </div>
  
