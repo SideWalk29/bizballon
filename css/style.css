@@ -121,7 +121,7 @@ text-decoration:none;
   overflow: hidden;
   box-shadow: 0 0 10px silver;
   transition: box-shadow 0.35s;
-  border: 1p solid  lightgrey;
+  border: 1px solid  lightgrey;
 }
 
   
@@ -209,21 +209,37 @@ text-decoration:none;
 }
 
 #tienda .modal-content  p{
- font-size:1.8rem;
+ font-size:0.8rem;
  padding:4px;
 }
-
+#tienda .modal-content .precio-anulado{
+  text-decoration:line-through;
+}
+#tienda .modal-content .precio-oferta{
+  color:orangered;
+}
 #tienda .modal-images {
   display:flex;
   flex-direction:row;
   justify-content: space-around;
   padding:10px;
-}
+  overflow: hidden;/*evitar que el zoom salga del div*/
 
+}
+#tienda .modal-images img{
+display: block;
+-webkit-transition:all .9s ease; /* Safari y Chrome */
+-moz-transition:all .9s ease; /* Firefox */
+-o-transition:all .9s ease; /* Opera */
+-ms-transition:all .9s ease; /* IE 9- Edge- Microsoft */
+transition: all 0.9s ease;
+}
 #tienda .imagen-modal:hover{
-  transform: scale(1.5);
-  transition: all 0.9s ease;
-  overflow: hidden;
+-webkit-transform:scale(1.5);
+-moz-transform:scale(1.5);
+-ms-transform:scale(1.5);
+-o-transform:scale(1.5);
+transform: scale(1.5);
 }
 #tienda .modal-close {
   font-size: 36px;
@@ -273,9 +289,21 @@ text-decoration:none;
     transform: translateY(100vh);
   }
 }
+/* Estilos para tablets */ 
+@media (max-width: 1024px) { 
 
+} 
+/* Estilos para móviles */ 
+@media (max-width: 768px) { 
+  #tienda .filtrosgaleria{
+    display:flex;
+    flex-direction:column;
+    text-align:center;
+    justify-content:center;
 
+  }
 
+}
 
   /*************** ESTILOS CLUBS ****************/
 
@@ -283,12 +311,16 @@ text-decoration:none;
     width: 100%; 
     height: 100%; 
     padding: 20px; 
-    background-color: var(--colorbackground)
+    background-color: white;
+}
+#clubs h2{
+  border-bottom: 1px solid rgb(59, 59, 235);
+  font-size: 4rem;
 }
 
   #clubs .button-container{ 
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     gap: 1rem;
@@ -340,27 +372,26 @@ text-decoration:none;
 }
 
   #clubs .button1::before{ 
-    background-image: url(../img/equipomasculino.jpg);
+    background-image: url(../images/equipo6.png);
   }
 
   #clubs .button2::before{ 
-    background-image: url(../img/equipofemenino.jpg);
-
+    background-image: url(../images/equipo3.png);
   }
   #clubs .button3::before{ 
-    background-image: url(../Images/);
+    background-image: url(../images/equipo5.png);
   }
 
   #clubs .button4::before{ 
-    background-image: url(../Images/equipocadete.jpg);
+    background-image: url(../images/equipo2.png);
   }
 
   #clubs .button5::before{ 
-    background-image: url(../Images/equipoinfantil.jpg);
+    background-image: url(../images/equipo4.png);
   }
 
   #clubs .button6::before{ 
-    background-image: url(../Images/equipoalevin.jpg);
+    background-image: url(../images/equipo1.png);
   }
 
   #clubs .text-over{
@@ -369,10 +400,10 @@ text-decoration:none;
     justify-content: center;
     flex-direction: column;
     z-index: 2;
-    color:white;
+    color: rgb(95, 95, 223);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-decoration: none;
-    font-size: 5rem;
+    font-size: 2.5rem;
     text-align: center;
 }
 
@@ -393,31 +424,102 @@ text-decoration:none;
   line-height: 1.8;
   font-weight: bold;
   text-align: center;
+  font-size: 1.5rem;
+}
+#clubs .texto-superior, .texto-inferior{
+  padding: 1rem;
+  margin: 1rem;
+  width: 1000px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  text-align: center;
+  border: 1px solid rgb(104, 104, 252);
+  overflow: hidden;
+  color: rgb(95, 95, 223);
+}
+
+#clubs .imagen-contenedor{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+ #clubs .mensaje-campeones {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+#clubs .mensaje-campeones p {
+  color: white;
+  font-size: 3rem;
+  text-align: center;
+  background-color: rgb(76, 76, 212);
+  padding: 0.5rem;
+  border-radius: 10px;
+}
+
+#clubs .imagen-contenedor:hover .mensaje-campeones {
+  opacity: 1;
+  pointer-events: auto;
+  animation: agrandar 4s;
+}
+
+@keyframes agrandar{
+  0% {
+    transform: translate(0%, 0%) scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translate(0%, 0%) scale(1.5);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(0%, 0%) scale(1);
+    opacity: 1;
+  }
 }
 
 /* conocenos.html/estilo conocenos*/
-#conocenos {
-  width: 100%;
-  height: 100%;
-}
+
 #conocenos h1{
-  font-family: "Poppins", sans-serif;
+  padding: 10px 0 10px 0;
+  color: white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: #65b6db;
+  text-align: center;
 }
-#conocenos.botones{
-  display: flex;
-  justify-content: center;
-  color: blue;
+#nosotros{
+  margin:100px;
+  font-family:"Poppins", sans-serif;
+}
 
+#nosotros .btn-section {
+  display: inline-block;         
+  padding: 10px 20px;              
+  margin: 5px;                     
+  font-size: 20px;                 
+  color:white;                 
+  background-color:#65b6db;      
+  border: none;                    
+  border-radius: 5px;              
+  text-align: center;              
+  text-decoration: none;           
+  transition: background-color 0.3s;
 }
-#conocenos.quienes-somos{
 
-}
-
-#conocenos.mision-valores{
-  
-}
-#conocenos.historia{
-  
+#nosotros .btn-section:hover {
+  background-color:rgb(0, 64, 107);      
+  color: #ffffff;                  
 }
 
 /* Index.html | Homepage */
@@ -436,7 +538,7 @@ text-decoration:none;
     font-size: 20px;
 }
 
-#index1 .header1 {
+.header1 {
   background-color: rgb(0, 64, 107);
     justify-content: space-around;
     display: flex;
@@ -445,26 +547,27 @@ text-decoration:none;
     padding: 10px 0 10px 0;
 }
 
-#index1 .header1 img {
+.header1 img {
     height: 100px;
     width: 0 auto;
 }
 
-#index1 .ul1 {
+.header1 .ul1 {
     display:flex;
     justify-content: space-around;
     list-style: none;
     margin-top:10px;
 }
 
-#index1 .ul1 a {
+
+.header1 .ul1 a {
     margin-right: 20px;
     font-size: 20px;
     text-decoration: none;
     color: white;
 }
 
-#index1 .ul1 a:hover {
+.header1 .ul1 a:hover {
   transform: scale(0.95);
   font-weight: bold;
 }
@@ -477,19 +580,50 @@ text-decoration:none;
     text-align: center;
 }
 
+#index1 .aboutus {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+#index1 .acercate1 {
+  cursor:pointer;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 30px 35% 25px 35%;
+  color: white;
+  background-color: #024a6b;
+  transition: 500ms
+}
+
+#index1 .acercate1:hover{
+  transform: scale(0.80);
+  transition-duration: 500ms;
+}
+
 #index1 .branding {
+margin: auto auto 30px auto;
     border-radius: 8px;
     height: 300px;
-    display:block;
-    margin: 0 auto 20px;
+    box-shadow: black -10px 10px 10px;
+}
+
+#index1 .aboutus .text-wrapper {
+  color: black;
 }
 
 #index1 main div img {
     border-radius: 8px;
     border: 1px solid black;
-    height: 350px;
+    height: 200px;
     display: flex;
-    margin: 0 auto;
+    margin: auto auto auto 20px;
+}
+
+
+#index1 .divnoti {
+  display: flex;
+  justify-content: center;
 }
 
 #index1 main p {
@@ -508,7 +642,6 @@ text-decoration:none;
 }
 
 
-
 #index1 .noticias .pdate {
     margin-bottom: 20px;
     font-style: italic;
@@ -517,32 +650,53 @@ text-decoration:none;
 }
 
 #index1 .noticias .ptext {
-    margin-top: 20px;
-    font-size: 16px;
+    font-size: 22px;
+    align-content: center;
+    text-align: justify;
+    line-height: 30px;
 }
+
+
 
 #index1 .noticias h4 {
   text-align: center;
-  margin:15px 40% 0 40%;
-  background-color: rgb(0, 64, 107);
+  margin:30px 40% 30px 40%;
   font-size: 16px;
   border-style: none;
   padding: 15px;
   border-radius: 4px;
   cursor: pointer;
   transition-duration: 500ms;
+  background-color: rgb(0, 64, 107);
   color: white;
-  text-decoration: none;
+
+}
+
+#index1 .image1 {
+  height: 250px;
+  margin: auto auto auto 10%;
+}
+
+#index1 .image2 {
+  height: 250px;
+  width: 0 auto;
+  margin: auto 10% 0 0;
+}
+
+#index1 .image3 {
+  height: 400px;
+  margin: auto auto auto 20px;
+
 }
 
 #index1 .noticias h4:hover {
-  transform: scale(0.95);
+  transform: scale(0.80);
   transition-duration: 500ms;
 }
 
 footer {
     background-color: #65b6db;
-    padding-bottom: 30px;
+    padding-bottom: 301px;
 }
 
 footer h2 {
@@ -565,9 +719,10 @@ footer img {
 
 .copyright {
     text-align: center;
+    padding: 10px 0 20px 0;
 }
 
-/* Index.html - Homepage | Response */
+/* Responsive Homepage | index.html */
 
 
 @media screen and (max-width: 300px) {
