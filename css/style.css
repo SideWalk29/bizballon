@@ -17,6 +17,29 @@
  color: var(--colortextodestacado);
 }*/
 
+body {
+  background-image: url(/images/backgroundball2.png); 
+  background-size: cover;
+  background-repeat: no-repeat; 
+  background-attachment: fixed;
+  background-position: center;
+  position: relative;
+  height: 100%;
+  margin: 0;
+}
+
+body::before {
+  content: ''; 
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(227, 233, 240, 0.795); 
+  z-index: -1; 
+
+}
+
 
 /*************** ESTILOS HEADER****************/
 
@@ -524,7 +547,6 @@ transform: scale(1.5);
   display: flex;
   flex-direction: row;
   margin: 1rem;
-  
 }
 
 #nosotros .parrafo1, .parrafo2, .parrafo3{
@@ -556,16 +578,11 @@ transform: scale(1.5);
   color: #ffffff;                  
 }
 
-
 #nosotros .img1, .img2, .img3{
   margin: 1rem;
  
 }
-#nosotros .img2{
-  width: 100%;
-  max-width:600px;
-  
-}
+
 
 @media (max-width:768px){
   #conocenos {
@@ -1090,8 +1107,9 @@ width: 45%;
 float: right;
 width: 45%;
 }
-#contacto .formulario titulo{
+#contacto .formulario h3{
   margin: 1rem;
+  padding:0.5rem;
 }
 #contacto .mi-formulario{
 margin:auto;
