@@ -349,6 +349,7 @@ transform: scale(1.5);
     background-repeat: no-repeat;
     background-image: var(--colorbackground);
     overflow: hidden;
+    font-weight: bold;
   }
 
 #clubs .button:hover{
@@ -436,7 +437,7 @@ transform: scale(1.5);
   padding: 1rem;
   margin: 1rem;
   width: 62.5rem;
-  border-radius: 10px;
+  border-radius: 0.5rem;
   box-sizing: border-box;
   text-align: center;
   border: 1px solid var(--textcolor);
@@ -495,18 +496,29 @@ transform: scale(1.5);
   }
 }
 
+/* Estilos para tablets */ 
+@media (max-width: 1024px) { 
+
+} 
+/* Estilos para móviles */ 
+@media (max-width: 768px) { 
+  #clubs {
+    display:flex;
+    flex-direction:column;
+    text-align:center;
+    justify-content:center;
+
+  }
+}
+
 /* conocenos.html/estilo conocenos*/
 
-#conocenos h1{
-  padding: 10px 0 10px 0;
-  color: white;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  background-color: #65b6db;
-  text-align: center;
-}
-#nosotros{
-  margin:100px;
-  font-family:"Poppins", sans-serif;
+
+#nosotros .texto{
+
+  color: var(--textcolor);
+  font-family:Geneva,Tahoma, sans-serif;
+  font-size: 1.5rem;
 }
 
 #nosotros .btn-section {
@@ -527,6 +539,24 @@ transform: scale(1.5);
   background-color:rgb(0, 64, 107);      
   color: #ffffff;                  
 }
+#nosotros .section-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (max-width:768px){
+  #conocenos {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+  }
+}
 
 /* Index.html | Homepage */
 
@@ -535,6 +565,8 @@ transform: scale(1.5);
 }
 
 .anouncementbar {
+  position: sticky;
+  top:0;
 font-weight: bold;
   color:white;
   background-color: #12A7EB;
@@ -554,7 +586,7 @@ background-color: rgb(0, 64, 107);
 
 .header1 img {
   height: 100px;
-  width: 0 auto;
+  width:  0 auto;
 }
 
 .header1 .ul1 {
@@ -562,14 +594,15 @@ background-color: rgb(0, 64, 107);
   justify-content: space-around;
   list-style: none;
   margin-top:10px;
+  gap: 20px;
 }
 
 
 .header1 .ul1 a {
-  margin-right: 20px;
   font-size: 20px;
   text-decoration: none;
   color: white;
+  transition: 1s ease;
 }
 
 .header1 .ul1 a:hover {
@@ -748,6 +781,11 @@ footer img {
 
 .header1 .ul1 a {
     font-size: 16px;
+}
+
+.header1 nav .menu1 {
+  width: 100%;
+  overflow:hidden;
 }
 
 .header1 .ul1 a:hover {
@@ -1031,4 +1069,9 @@ width: 50%;
 border: 2px solid red; 
 padding: 30px;
 border-radius: 3px;
+}
+#contacto.map-container{
+width: 100%;
+height: 500px;
+border: 1px solid #ccc;
 }
