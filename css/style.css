@@ -1847,13 +1847,13 @@ background-color:var(--colorbackground);
 }
 #contacto .sugerencias label{ 
   width: 40%;
-    }
-    #contacto .formulario h3{
-      font-size: 2rem;
-      }
-      #contacto .formulario input{
-        font-size: 1.2rem;
-        }
+}
+#contacto .formulario h3{
+  font-size: 2rem;
+}
+#contacto .formulario input{
+  font-size: 1.2rem;
+}
       
 }
 
