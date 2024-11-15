@@ -890,6 +890,7 @@ font-weight: bold;
 display: flex;
 align-items: center;
 justify-content: space-around;
+
 }
 #index1 .branding1 {
   margin: 40px;
@@ -956,6 +957,7 @@ transition: 0.4s;
   color:white;
   align-self: center;
   line-height: 28px;
+  font-style: italic;
 }
 
 #index1 .acercate1:hover{
@@ -1636,8 +1638,8 @@ font-size: 12px;
 /*************** ESTILOS CONTACTO****************/
 
 #contacto {
-  display:flex;
-  flex-direction:column; 
+display:flex;
+flex-direction:column; 
 justify-content:center;
 align-items:center;
 padding:2rem;
@@ -1665,8 +1667,8 @@ padding: 0.5rem;
 }
 
 #contacto h3{
-  color: var(--colortextodestacado);
-  font-size: 2rem;
+color: var(--colortextodestacado);
+font-size: 2rem;
   }
 
 #contacto ul {
@@ -1740,25 +1742,25 @@ border-radius: 5px;
 font-size: 30px;
 }
 #contacto .acepto {
-  font-weight: bolder;
-  margin: 1rem;
-  padding: 2rem;
-  text-align: center;
+font-weight: bolder;
+margin: 1rem;
+padding: 2rem;
+text-align: center;
 }
 #contacto .aviso {
-  font-size: 1rem;
-  margin: 1rem;
-  padding: 1rem;
-  text-align: center;
- line-height: 2rem;
+font-size: 1rem;
+margin: 1rem;
+padding: 1rem;
+text-align: center;
+line-height: 2rem;
 }
 #contacto .datos{
-  line-height: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding-top: 2rem;
+line-height: 1.5rem;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding-top: 2rem;
 }
 
 #contacto .map-container {
@@ -1772,29 +1774,29 @@ padding: 0.5rem;
 #contacto iframe { 
 width: 100%;
 height: 60vh;
-margin:;
+margin:0;
 }
 
 #contacto .sugerencias { 
   width: 60%;
   margin: 10rem;
   padding: 2rem;
- line-height: rem;
+line-height: rem;
   }
   #contacto .sugerencias ul{ 
 list-style-type: square;
   }
       
   #contacto .sugerencias label{ 
-  display:block;
-   margin:1rem;
-   width: 20%;
-   text-align: center;
+display:block;
+ margin:1rem;
+ width: 20%;
+ text-align: center;
     }
 
 /** botón leer mas, leer menos **/
 #contacto #leemenos_boton {
-  display:none;
+display:none;
   
 }
 
@@ -1812,44 +1814,44 @@ background-color:var(--colorbackground);
 
 /* Checkbox oculto */
 #contacto #leermas {
-  display: none;/*ocultar cuadro checkbox*/
+display: none;/*ocultar cuadro checkbox*/
 }
 
 #contacto .textooculto {
-  display: none;/*ocultar texto*/
-  margin: 2rem;
+display: none;/*ocultar texto*/
+margin: 2rem;
 }
 
 /* Mostrar el texto oculto y el botón "Leer menos" cuando el checkbox está marcado, y ocultar el de "Leer más" */
 #contacto #leermas:checked + .textooculto {
-  display: block;/*mostrar texto cuando el check esta activado*/
-  opacity: 1;
-  transition: opacity 0.5s ease;
+display: block;/*mostrar texto cuando el check esta activado*/
+opacity: 1;
+transition: opacity 0.5s ease;
 }
 
 #contacto #leermas:checked ~ #leemas_boton {
-  display: none;/*ocultar el label leemas_boton cuando check esta activado*/ 
+display: none;/*ocultar el label leemas_boton cuando check esta activado*/ 
 }
 
 #contacto #leermas:checked ~ #leemenos_boton {
-  display: inline-block;/*mosstrar el label leemas_menos cuando check esta activado*/ 
+display: inline-block;/*mosstrar el label leemas_menos cuando check esta activado*/ 
 }
 
 /* Estilos para móviles */ 
 
 @media (max-width: 768px) { 
   #contacto .formulario h3 {
-    font-size: 1rem;
+font-size: 1rem;
    }
-   #contacto .sugerencias { 
-   font-size: 1.2rem;
-   width: 80%;
+#contacto .sugerencias { 
+font-size: 1.2rem;
+width: 80%;
 }
 #contacto .sugerencias label{ 
-  width: 40%;
+width: 40%;
 }
 #contacto .formulario h3{
-  font-size: 2rem;
+ont-size: 2rem;
 }
 #contacto .formulario input{
   font-size: 1.2rem;
