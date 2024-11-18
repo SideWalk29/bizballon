@@ -40,30 +40,29 @@
          <h2>Productos</h2>
          
           <div class="filtrosgaleria">
-     <!--    botones de filrado por categorias -->
+     <!--    botones de filtrado por categorias -->
  
-           <input type="radio" id="todos" name="button" checked><label for="todos">todos</label>
-           <input type="radio" id="camiseta" name="button"><label for="camiseta">camiseta</label>
-           <input type="radio" id="shorts" name="button"><label for="shorts">shorts</label>
-           <input type="radio" id="sudadera" name="button"><label for="sudadera">sudadera</label>
-           <input type="radio" id="calcetines" name="button"><label for="calcetines">calcetines</label>
-       
+              <input type="radio" id="todos" name="button" name="categorias" value="todos" checked><label for="todos">todos</label>
+              <input type="radio" id="camiseta" name="button" name="categorias" value="camiseta"><label for="camiseta">camiseta</label>
+              <input type="radio" id="shorts" name="button" name="categorias" value="shorts"><label for="shorts">shorts</label>
+              <input type="radio" id="sudadera" name="button" name="categorias" value="sudadera"><label for="sudadera">sudadera</label>
+              <input type="radio" id="calcetines" name="button" name="categorias" value="calcetines"><label for="calcetines">calcetines</label>
+                
              <div class="galeria">
 
              
-             <figure class="card camiseta camiseta1">
+             <figure class="card" data-categoria="camiseta">
              <a class="modal-btn" href="#modal1">
                 <img src="images/camiseta_1.jpg" alt="modelo camiseta niño con logo de BBF" title="Camiseta niño BBF" class="card-imagen">
               </a>
-			 	<div class="oferta">
+			      	<div class="oferta">
                           <p>Ahora en oferta</p>
-                 </div>
+              </div>
                  <figcaption class="card-caption">camiseta BBF niño</figcaption>
              </figure>
             
-
            
-             <figure class="card camiseta">  
+             <figure class="card" data-categoria="camiseta">  
               <a class="modal-btn" href="#modal2">
                 <img src="images/camiseta_2.png" alt="modelo camiseta mujer con logo de BBF" title="Camiseta mujer BBF" class="card-imagen">
              </a>
@@ -71,49 +70,49 @@
              </figure>
             
 
-              <figure class="card camiseta">  
+              <figure class="card" data-categoria="camiseta">  
                 <a class="modal-btn" href="#modal3">
                 <img src="images/camiseta_3.png" alt="modelo camiseta hombre con logo de BBF" title="Camiseta hombre BBF" class="card-imagen">
                 </a>
                  <figcaption class="card-caption">camiseta BBF hombre</figcaption>
              </figure>
                 
-             <figure class="card shorts">
+             <figure class="card" data-categoria="shorts">
               <a class="modal-btn" href="#modal4">
                  <img src="images/shorts_1.jpg" alt="modelo shorts niño con logo de BBF" title="Shorts niño BBF" class="card-imagen">
               </a>
                   <figcaption class="card-caption">shorts BBF niño</figcaption>
              </figure>	
                  
-              <figure class="card shorts">
+              <figure class="card" data-categoria="shorts">
                 <a class="modal-btn" href="#modal5">	
                  <img src="images/shorts_2.jpg" alt="modelo shorts mujer con logo de BBF" title="Shorts mujer BBF" class="card-imagen">
                 </a>
                    <figcaption class="card-caption">shorts BBF mujer</figcaption>
              </figure>
                  
-              <figure class="card shorts">	
+              <figure class="card" data-categoria="shorts">	
                 <a class="modal-btn" href="#modal6">
                  <img src="images/shorts_3.png" alt="modelo shorts hombre con logo de BBF" title="Shorts hombre BBF" class="card-imagen">
                 </a>
                    <figcaption class="card-caption">shorts BBF hombre</figcaption>
               </figure>	
                  
-              <figure class="card sudadera">
+              <figure class="card" data-categoria="sudadera">
                 <a class="modal-btn" href="#modal7">
                  <img src="images/sudadera_1.jpg" alt="modelo sudadera niño con logo de BBF" title="Sudadera niño BBF" class="card-imagen">
                 </a>
                      <figcaption class="card-caption">sudadera BBF niño</figcaption>
               </figure>	
                  
-             <figure class="card sudadera">	
+             <figure class="card" data-categoria="sudadera">	
               <a class="modal-btn" href="#modal8">
                  <img src="images/sudadera_2.png" alt="modelo sudadera mujer con logo de BBF" title="Sudadera mujer BBF" class="card-imagen">
                  </a>
                      <figcaption class="card-caption">sudadera BBF mujer</figcaption>
               </figure>	
                  
-             <figure class="card sudadera">	
+             <figure class="card" data-categoria="sudadera">	
               <a class="modal-btn" href="#modal9">
                  <img src="images/sudadera_3.png" alt="modelo sudadera hombre con logo de BBF" title="Sudadera hombre BBF" class="card-imagen">
                  </a>
@@ -121,14 +120,14 @@
               </figure>	
                  
                  
-             <figure class="card calcetines">
+             <figure class="card" data-categoria="calcetines">
               <a class="modal-btn" href="#modal10">
                 <img src="images/calcetines_1.jpg" alt="modelo calcetines niño con logo de BBF" title="Calcetines niño BBF" class="card-imagen">
                 </a>
                     <figcaption class="card-caption">calcetines BBF niño</figcaption>
               </figure>	
                 
-               <figure class="card calcetines">
+               <figure class="card" data-categoria="calcetines">
                 <a class="modal-btn" href="#modal11">
                 <img src="images/calcetines_2.jpg" alt="modelo calcetines adulto con logo de BBF" title="Calcetines adulto BBF" class="card-imagen">
                 </a>

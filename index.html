@@ -25,35 +25,24 @@
             <li class="menu"><a href="index.html">Home</a></li>
             <li class="menu"><a href="tienda.html">Tienda</a></li>
             <li class="menu"><a href="clubs.html">Clubs</a></li>
-            <li class="menu"><a href="conocenos.html">Conocenos</a></li>
+            <li class="menu"><a href="conocenos.html">Nosotros</a></li>
             <li class="menu"><a href="contacto.html">Contacto</a></li>
         </ul>
     </nav>
 </header>
     <main>
-        <div class="aboutus">
-            <div class="somosoptimization">
-                <img class="happycustomers" src="images/HappyCustomers.svg">
-                    <h2 class="text-wrapper">Somos The<span style="background-color: red; color:white; font-size: 80px; font-style: italic;"><br>&nbsp;CoderS&nbsp;<br></span></h2>
-                 <div class="somosp">
-                     <p><span style="color: white; border: 1px solid rgb(0, 0, 185); padding: 0 3px 0 3px; border-radius: 40px; margin-right: 10px; background-color:rgb(0, 0, 185)" >✔</span><span style="color: black; font-weight: bold; font-size: 22px;">pagina fiable con seguro SSL</span></p>
-                     <p><span style="color: white; border: 1px solid rgb(0, 0, 185); padding: 0 3px 0 3px; border-radius: 40px; margin-right: 10px; background-color:rgb(0, 0, 185)" >✔</span><span style="color: black; font-weight: bold; font-size: 22px;">tienda online con ropa de calidad</span></p>
-                     <p><span style="color: white; border: 1px solid rgb(0, 0, 185); padding: 0 3px 0 3px; border-radius: 40px; margin-right: 10px; background-color:rgb(0, 0, 185)" >✔</span><span style="color: black; font-weight: bold; font-size: 22px;">noticias y eventos continuos</span></p>
-
-                <div class="testimony1">
-                    <img src="images/Face1.jpeg">
-                    <p class="testimonytext">"La verdad que no me quedan palabras, buen soporte, noticias, eventos, tienda es como si hubiera ganado la loteria, un pack de 4x1."<br>- Brian Rodriguez&nbsp;&nbsp;&nbsp;<span style="color:#00ffa2; font-size: 20px;">★★★★★</span></p>
-                </div>
-                <a href="conocenos.html"><p class="acercate1">Acercate a nosotros 👉 </p></a>
+        <div class="home1">
+            <div id="open-button" oneclick="document.querySelector('#dialog').showModal()">
+            <img src="images/homeball1.jpg">
             </div>
+            <dialog id="dialog">
+                <h1>Bienvenidos a la pagina official del FBB</h1>
+                <form method="dialog">
+                    <button id="close-button">Cerrar</button>
+                </form>
+            </dialog>
         </div>
-
-            <div>
-                <img class="branding1" src="images/branding.png" alt="Team Logo">
-            </div>
-
-        </div>
-        <h2 class="noti1">Noticias</h2>
+        <h2 class="noti1">NOTICIAS</h2>
         <div class="noticias">
 
             <h3><span style="background-color: rgb(0, 50, 143); color:white; padding: 3px 0 3px 0">&nbsp;Fallece con sólo 20 años&nbsp;</span> Blanca Guillén, <span style="background-color: rgb(0, 50, 143); color:white; padding: 2px 0 2px 0">&nbsp;jugadora del CAB&nbsp;</span>&nbsp;y el Maristas Cartagena</h3>
@@ -96,18 +85,79 @@
         </div>
 
         <div class="torneosdiv">
-            <div class="torneos">Proximos Eventos - Torneos</div>
+            <div class="torneos">PROXIMOS EVENTOS</div>
             <h2>TORNEO DE LOS GUERREROS</h2>
             <img src="images/Torneoimg.png">
-            <ul>
-                <li>Fecha:  Empieza 11/29/2024 - Termina 15/01/2025</li>
-                <li>Direccion: San Mames Zumarkalea, 12.</li>
-                <li>Equipos participados: Equipo de Basauri</li>
-            </ul>
+            <table>
+                <tr>
+                    <th>Evento</th>
+                    <th>Fecha</th>
+                    <th>Lugar</th>
+                    <th>Edad</th>
+                    <th>Genero</th>
+                </tr>
+                <tr>
+                    <td>01</td>
+                    <td>Diciembre 30, 2024</td>
+                    <td>Calle de Lersundi 12, 48003 Bilbao, Vizcaya, Spain</td>
+                    <td>18-25</td>
+                    <td>Hombres</td>
+                </tr>
+                <tr>
+                    <td>02</td>
+                    <td>Enero 28, 2025</td>
+                    <td>Calle de Astarloa 9, 48006 Bilbao, Vizcaya, Spain</td>
+                    <td>18-25</td>
+                    <td>Mujeres</td>
+                </tr>                <tr>
+                    <td>03</td>
+                    <td>Marzo 12, 2025</td>
+                    <td>Plaza Moyúa 7, 48009 Bilbao, Vizcaya, Spain</td>
+                    <td>25-35</td>
+                    <td>Mujeres</td>
+                </tr>
+                <tr>
+                    <td>04</td>
+                    <td>Junio 14, 2025</td>
+                    <td>Avenida del Ferrocarril 23, 48013 Bilbao, Vizcaya, Spain</td>
+                    <td>25-40</td>
+                    <td>Hombres</td>
+                </tr>
+            </table>
         </div>
         <div class="quotediv">
-            <div class="quote">Testimonio del Medico</div>
-            <img src="images/IbaiQuote.png">
+            <div class="quote"></div>
+        </div>
+        <div class="aboutus">
+            <div class="somosoptimization">
+                <img class="happycustomers" src="images/HappyCustomers.svg">
+                    <h2 class="text-wrapper">Somos The<span style="background-color: red; color:white; font-size: 80px; font-style: italic;"><br>&nbsp;FBB&nbsp;<br></span></h2>
+                 <div class="somosp">
+                     <p><span style="color: white; border: 1px solid rgb(0, 0, 185); padding: 0 3px 0 3px; border-radius: 40px; margin-right: 10px; background-color:rgb(0, 0, 185)" >✔</span><span style="color: black; font-weight: bold; font-size: 22px;">Actualízate con noticias recientes</span></p>
+                     <p><span style="color: white; border: 1px solid rgb(0, 0, 185); padding: 0 3px 0 3px; border-radius: 40px; margin-right: 10px; background-color:rgb(0, 0, 185)" >✔</span><span style="color: black; font-weight: bold; font-size: 22px;">Compra Equipos de Calidad</span></p>
+                     <p><span style="color: white; border: 1px solid rgb(0, 0, 185); padding: 0 3px 0 3px; border-radius: 40px; margin-right: 10px; background-color:rgb(0, 0, 185)" >✔</span><span style="color: black; font-weight: bold; font-size: 22px;">Participa en Eventos y Torneos</span></p>
+
+                <div class="testimony1">
+                    <img src="images/Face1.jpeg">
+                    <p class="testimonytext">"La verdad que no me quedan palabras, buen soporte, noticias, eventos, tienda es como si hubiera ganado la loteria, un pack de 4x1."<br>- Brian Rodriguez&nbsp;&nbsp;&nbsp;<span style="color:#00ffa2; font-size: 20px;">★★★★★</span></p>
+                </div>
+                <a href="conocenos.html"><p class="acercate1">Acercate a nosotros 👉 </p></a>
+            </div>
+        </div>
+
+            <div>
+                <img class="branding1" src="images/branding.png" alt="Team Logo">
+            </div>
+
+        </div>
+        <main class="vistoen">
+            <h3>VISTO EN:</h3>
+        </main>
+        <div class="featured">
+                <img class="brand" src="images/Spotify.png">
+                <img class="brand" src="images/FederacionEspana.png">
+                <img class="brand" src="images/applemusic.png">
+                <img class="brand" src="images/Youtube.png">
         </div>
     </main>
 </body>
@@ -123,7 +173,7 @@
     </nav>
     <div class="copyright">
     <p>BBF Brand™ © All Rights Reserved | contactanos por soporte@balonmanobasauri.com</p>
-    <img src="images/Payment.svg" alt="payment seal">
+    <img class="paymentseal" src="images/Payment.svg" alt="payment seal">
 </div>
 </footer>
 </html>

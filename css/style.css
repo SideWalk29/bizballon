@@ -47,16 +47,15 @@ body::before {
   display:flex;
   flex-direction: column;
   height: 100%;
-  font-style: normal;
   color: var(--textcolor);
+  font-family: var(--font);
 
 }
 #tienda main{
 	text-align:center;
-
 }
 
-#tienda h1{
+#tienda main h1{
 padding: 20px;
 font-size:4rem;
 font-weight: bold;
@@ -64,7 +63,7 @@ color:var(--colortextodestacado);
 margin:5px;
 }
 
-#tienda h2{
+#tienda main h2{
   padding: 20px;
 	font-size:2rem;
 	font-weight: bold;
@@ -73,7 +72,7 @@ margin:5px;
 }
 
 
-#tienda a{
+#tienda main a{
 text-decoration:none;
 
 }
@@ -101,14 +100,21 @@ text-decoration:none;
     background-color: rgb(177, 210, 248);
 }
 
+/* Si el input con value=todos esta chequeado se muestran todas los figures */
+[value="todos"]:checked ~ .galeria [data-categoria] {
+  display: block;
+}
 
-#tienda [type="radio"]:nth-of-type(2):checked ~ .galeria .card:not(.camiseta),
-#tienda [type="radio"]:nth-of-type(3):checked ~ .galeria .card:not(.shorts),
-#tienda [type="radio"]:nth-of-type(4):checked ~ .galeria .card:not(.sudadera),
-#tienda [type="radio"]:nth-of-type(5):checked ~ .galeria .card:not(.calcetines)
+/* Se ocultan los figures cuyas data-categoria no coincida con el del input chequeado */
+
+#tienda [value="camiseta"]:checked ~ .galeria figure:not([data-categoria="camiseta"]),
+#tienda [value="shorts"]:checked ~ .galeria figure:not([data-categoria="shorts"]),
+#tienda [value="sudadera"]:checked ~ .galeria figure:not([data-categoria="sudadera"]),
+#tienda [value="calcetines"]:checked ~ .galeria figure:not([data-categoria="calcetines"])
 {
   display: none;
 }
+
  /* estilos de la galeria de productos */
 #tienda  .galeria{
   display: grid;
@@ -171,15 +177,7 @@ text-decoration:none;
   color: var(--colortextodestacado);
 }
 
-#tienda footer {
-  background-color: var(--colorbackground);
-  width: 100%;
-  height: 30vh;
-  min-height:30vh;
-  color: white;
-  padding:20px;
-  padding-bottom:3rem;
-}
+
 
 /*** estilos para el modal ***/
 #tienda .modal {
@@ -279,7 +277,8 @@ transform: scale(1.5);
   right: 24px;
   top: 10px;
 }
-
+/** animación para mostrar el modal **/
+/*se oculta*/
 @keyframes fadeOut {
   from {
     opacity: 1;
@@ -289,7 +288,7 @@ transform: scale(1.5);
     opacity: 0;
   }
 }
-
+/*se muestra*/
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -299,7 +298,7 @@ transform: scale(1.5);
     opacity: 1;
   }
 }
-
+/*se mueve desde fuera del viewport al punto y=o*/
 @keyframes slideUp {
   from {
     transform: translateY(100vh);
@@ -309,7 +308,7 @@ transform: scale(1.5);
     transform: translateY(0);
   }
 }
-
+/*se mueve desde fuera el viewport hasat furea de el*/
 @keyframes slideDown {
   from {
     transform: translateY(0);
@@ -321,7 +320,8 @@ transform: scale(1.5);
 }
 
 /* Estilos para móviles */ 
-@media (max-width: 768px) { 
+/*aplica desde 0px hasta 600px*/
+@media only screen and (max-width: 600px) { 
   #tienda .filtrosgaleria{
     display:flex;
     flex-direction:column;
@@ -329,8 +329,17 @@ transform: scale(1.5);
     justify-content:center;
 
   }
-  #tienda h1{
-    font-size:2.5rem;
+  #tienda main h1{
+    font-size:2.8rem;
+  }
+
+}
+/* Estilos para tablet */ 
+/*aplica desde 600px hasta 768px*/
+@media only screen and (min-width: 600px) and (max-width: 768px){ 
+  #tienda main h1{
+    font-size:3.2rem;
+    color:red;
   }
 
 }
@@ -372,50 +381,43 @@ transform: scale(1.5);
     gap: 1rem;
     text-decoration: none;
   }
-
-#clubs .button{
-    position: relative;
+/*Primero el estilo del propio botón*/
+#clubs .button{  /*botones con transparencias para los diferentes equipos, aqui se establece el estilo de cada botón*/
+    position: relative; /*Esto permite que los pseudo-elementos como ::before se posicionen correctamente dentro del botón*/
     display: flex;
     width: 100%;
     height: 10rem;
     border-radius: 10%;
-    background-position: 1%;
-    justify-content: center;
-    text-align: center;
     cursor: pointer;
     text-decoration: none;
+    justify-content: center;
     border: none;
-    background-size: 100%;
-    background-repeat: no-repeat;
-    background-image: var(--colorbackground);
-    overflow: hidden;
-    font-weight: bold;
+    overflow: hidden;/*Evita que elementos hijos o pseudo-elementos se desborden del contenedor*/
   }
 
-#clubs .button:hover{
+#clubs .button:hover{ /*aqui se establece el cambio de escala del botón al pasar el raton por encima*/
     transform: scale(1.1);
-    opacity: 5;
     transition: 2s;
   }
-
-#clubs .button::before{
+/*el estilo del contenido del boton*/
+#clubs .button::before{ /*El pseudo-elemento ::before crea una capa adicional dentro del botón, que se usa para añadir un fondo decorativo o una textura, aqui establecemos el estilo de la imagen de fondo*/
     content:'';
-    position: absolute;
+    position: absolute; /*Hace que el pseudo-elemento se posicione dentro del botón (relative en el contenedor es necesario).*/
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     border-radius: 10%;
-    background-size: cover;
+    background-size: cover; /*la imagen llega a cubrir todo el botón*/
     background-position: center;
     background-repeat: no-repeat;
     opacity: 0.1; 
-    z-index: 1; 
+    z-index: 1; /*capa 0 boton, capa 1 imagen*/
 }
 
-#clubs .button:hover::before{
+#clubs .button:hover::before{ /*Este hover especifica que la capa de la imagen cambie segun pase el raton*/
   transition: 0.8s;
-  opacity: 10;
+  opacity: 1;
 }
 
 #clubs .button1::before{ 
@@ -441,20 +443,21 @@ transform: scale(1.5);
     background-image: url(../images/equipo1.png);
   }
 
-  #clubs .text-over{
+  #clubs .text-over{ /*estilo del texto dentro de cada botón*/
     position: relative;
     display: flex;
     justify-content: center;
     flex-direction: column;
-    z-index: 2;
+    z-index: 2; /*capa 2 texto*/
     color: var(--textcolor);
     font-family: var(--font);
     text-decoration: none;
     font-size: 2.5rem;
     text-align: center;
+    font-weight: bold;
 }
 
- #clubs .button:hover .text-over{
+ #clubs .button:hover .text-over{ /*el texto desaparece al bajarle la opacidad cuando pasamos el ratón*/
   transition: 0.2s;
   opacity: 0; 
 }
@@ -474,7 +477,7 @@ transform: scale(1.5);
   font-size: 1.5rem;
 }
 
-#clubs .texto-superior, .texto-inferior{
+#clubs .texto-superior, .texto-inferior{ /*estilo de los textos explicativos de los equipos almacenados dentro de una caja*/
   padding: 1rem;
   margin: 1rem;
   width: 62.5rem;
@@ -488,7 +491,7 @@ transform: scale(1.5);
   font-family: var(--font);
 }
 
-#clubs .imagen-contenedor {
+#clubs .imagen-contenedor { /*estilo del contenedor de las imagenes siendo esta relative para que el mensaje de campeones emerja delante de la imagen*/
   position: relative;
   display: flex;
   justify-content: center;
@@ -496,12 +499,12 @@ transform: scale(1.5);
   align-items: center;
 }
 
-#clubs .imagen-contenedor img {
+#clubs .imagen-contenedor img { /*especifica que las imagenes bajan a una capa menor */
   position: relative;
   z-index: -1; 
 }
 
- #clubs .mensaje-campeones {
+ #clubs .mensaje-campeones { /*mensaje de campeones emergente de la imagen*/
   position: absolute;
   top: 0;
   left: 0;
@@ -515,7 +518,7 @@ transform: scale(1.5);
   z-index: 1;
 }
 
-#clubs .mensaje-campeones p {
+#clubs .mensaje-campeones p { /*estilo del mensaje campeones*/
   color: white;
   font-size: 3rem;
   text-align: center;
@@ -524,13 +527,13 @@ transform: scale(1.5);
   border-radius: 10px;
 }
 
-#clubs .imagen-contenedor:hover .mensaje-campeones {
+#clubs .imagen-contenedor:hover .mensaje-campeones { /*este hover especifica que el mensaje aparezca al pasar el ratón*/
   opacity: 1;
   pointer-events: auto;
   animation: agrandar 4s;
 }
 
-@keyframes agrandar{
+@keyframes agrandar{ /* la animación del mensaje quee se agranda*/
   0% {
     transform: translate(0%, 0%) scale(1);
     opacity: 0.5;
@@ -544,37 +547,112 @@ transform: scale(1.5);
     opacity: 1;
   }
 }
- #clubs .balon {
+ #clubs .balon { /*estilo de la animación del balón al principio de la pagina*/
   background: url(/images/handball-modified.jpg);
   background-size: 100px 100px;
   height: 100px;
   width: 100px;
   position: absolute;
-  -webkit-animation:roll 4.5s infinite;
-  -moz-animation:roll 20s infinite;
   animation:roll 20s infinite;
 }
 
-@-moz-keyframes roll {  
-  0% {left:0px; -webkit-transform: rotate(-360deg);}
-  50% {left:1800px; -webkit-transform: rotate(360deg);}
-  100% {left:0px; -webkit-transform: rotate(-360deg);}
+@keyframes roll { /*especificaciones de la animación de roll para que pase por toda la pantalla y ruede*/
+  0% {
+    left:0px; transform:  rotate(-360deg);
+  }
+  50% {
+    left:1800px; transform:  rotate(360deg);
+  }
+  100% {
+    left:0px;  transform:  rotate(-360deg);
+  }
 }
-@-webkit-keyframes roll { 
-  0% {left:0px; -webkit-transform: rotate(-360deg);}
-  50% {left:1800px; -webkit-transform: rotate(360deg);}
-  100% {left:0px; -webkit-transform: rotate(-360deg);}
-}
-
-@keyframes roll { 
-  0% {left:0px; -webkit-transform: rotate(-360deg);}
-  50% {left:1800px; -webkit-transform: rotate(360deg);}
-  100% {left:0px; -webkit-transform: rotate(-360deg);}
-}
-
-
 
 /* Estilos para móviles */ 
+@media (max-width: 600px) { 
+  
+  #clubs {
+    display:flex;
+    flex-direction:column;
+    text-align:center;
+    justify-content:center;
+    font-family: var(--font);
+  }
+
+  #clubs h1{
+    text-align: center;
+    font-size: 2rem;
+  }
+  
+  #clubs .button-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 0.3rem;
+  }
+  
+  #clubs .text-over{
+    font-size: 1.5rem;
+    width: 100%;
+    text-align: center;
+  }
+
+  #clubs .teams div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    width: 100%;
+    font-size: 0.5rem;
+  }
+  
+#clubs .teams img {
+  width: 80%;
+  margin-right: 0.7rem;
+}
+
+#clubs .teams h2 {
+  text-align: center;
+  width: 100%;
+  margin-bottom: 0.3rem;
+  font-size: 1.5rem;
+}
+
+#clubs .imagen-contenedor {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+#clubs .mensaje-campeones p {
+  position: absolute;
+  text-align: center;
+  width: 80%;
+  font-size: 0.5rem;
+}
+
+#clubs .imagen-contenedor img {
+  width: 80%;
+  margin-right: 0.5rem;
+}
+
+#clubs .texto-superior{
+width: 50%;
+text-align: right;
+font-size: 0.3rem;
+}
+
+#clubs .texto-inferior {
+  width: 50%;
+  text-align: center;
+  font-size: 0.3rem;
+}
+}
+
+/* Estilos para tablets*/ 
 @media (max-width: 768px) { 
   
   #clubs {
@@ -582,7 +660,7 @@ transform: scale(1.5);
     flex-direction:column;
     text-align:center;
     justify-content:center;
-    font-family: var();
+    font-family: var(--font);
   }
 
   #clubs h1{
@@ -679,17 +757,17 @@ font-size: 0.5rem;
 }
 
 #nosotros h1 {
-padding: 20px;
-font-size:4rem;
-font-weight: bold;
-}
-
-#nosotros h1 {
+  padding: 20px;
+  font-size:4rem;
+  font-weight: bold;
   color: var(--colortextodestacado);
   margin: 10px;
   text-align: center;
-  font-size: 4rem; 
-}
+  }
+  
+  #nosotros h3 {
+    text-align: center;
+  }
 
 #nosotros .contenido{
   display: flex;
@@ -697,7 +775,7 @@ font-weight: bold;
   padding: 20px;
   background-color: white;
   border-radius:10px;
-  margin: 35px;
+  margin: 20px;
 
 }
 
@@ -755,6 +833,17 @@ font-weight: bold;
   border-radius: 10px;
   padding: 20px;
   margin: 30px;
+  text-align: justify;
+}
+#nosotros .precios li, nosotros .condiciones{
+  margin: 0 10px;
+  padding: 10px;
+}
+
+#nosotros .precios:hover, #nosotros .condiciones:hover{
+  background-color:var(--colorbackground);
+  color:var(--textcolor);
+  transition:background-color 0.3s
 }
 
 #nosotros .botones {
@@ -774,7 +863,43 @@ font-weight: bold;
   background-color: #e1e7ec; 
 }
 
-@media (max-width: 750px) {
+#nosotros .pic-carrusel {
+  display: flex;
+  overflow: hidden;
+  width:700px;
+  margin: 0 auto;
+  position: relative;
+  gap: 10px;
+  width: max-content;
+}
+
+#nosotros .pic-carrusel img {
+  width:600px;
+  height:350px;
+  object-fit: cover;
+  border-radius: 12px;
+
+}
+
+@keyframes scroll-carrusel {
+  0% {
+    transform: translateX(0%); 
+  }
+  100% {
+    transform: translateX(-45%); 
+  }
+}
+
+
+#nosotros .pic-carrusel {
+  animation: scroll-carrusel 50s linear infinite;
+}
+
+#nosotros .pic-carrusel:hover {
+  animation-play-state: paused; 
+}
+
+@media (max-width: 600px) {
   #nosotros .contenido {
     flex-direction: column; 
     text-align: center; 
@@ -806,7 +931,45 @@ font-weight: bold;
 }
 
 }
-@media (max-width: 750px) {
+@media (max-width: 600px) {
+  #nosotros h1 {
+    font-size: 2.5rem; 
+  }
+}
+
+@media (max-width: 768px) {
+  #nosotros .contenido {
+    flex-direction: column; 
+    text-align: center; 
+  }
+
+  #nosotros .img1, #nosotros .img2, #nosotros .img3 {
+    order: 2; 
+  }
+
+  #nosotros .parrafo1, #nosotros .parrafo2, #nosotros .parrafo3 {
+    order: 1; 
+  }
+ 
+  #nosotros .img1 img, #nosotros .img2 img, #nosotros .img3 img {
+    max-width: 90%; 
+    margin: 0 auto; 
+  }
+
+  #nosotros #hazte-socio{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  #nosotros .botones {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+}
+@media (max-width: 768px) {
   #nosotros h1 {
     font-size: 2.5rem; 
   }
@@ -822,6 +985,32 @@ font-weight: bold;
   list-style-type: none;
 }
 
+table {
+  justify-self: center;
+  border-collapse: collapse;
+  border: 1px solid #ddd;
+  width: 80%;
+  margin-bottom: 30px;
+}
+
+th, td {
+  border: 1px solid #757575;
+  padding: 10px;
+}
+
+th {
+  background-color: #f0f0f0;
+  font-weight: bold;
+
+}
+
+dialog {
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 10px;
+  width: 300px;
+}
+
 .anouncementbar {
   position: sticky;
   top:0;
@@ -833,7 +1022,6 @@ font-weight: bold;
   text-align: center;
   font-size: 20px;
 }
-
 
 .header1 {
   position: sticky;
@@ -873,6 +1061,26 @@ font-weight: bold;
   transition: 1s ease;
 }
 
+#index1 .home1 h1 {
+  color: white;
+  text-align: center;
+  display: flex;
+  position:absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #002750;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+#index1 .home1 img {
+  height: 600px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+}
+
 .header1 .ul1 a:hover {
 transform: scale(0.95);
 font-weight: bold;
@@ -890,8 +1098,8 @@ font-weight: bold;
 display: flex;
 align-items: center;
 justify-content: space-around;
-
 }
+
 #index1 .branding1 {
   margin: 40px;
   margin-top: 20px;
@@ -899,6 +1107,29 @@ justify-content: space-around;
   height: 300px;
   box-shadow: black -10px 5px 2px;
 }
+
+#index1 .vistoen {
+  text-align: center;
+  background-color: red;
+  color: white;
+  padding: 8px 0 8px 0;
+}
+
+#index1 .featured {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px 0 20px 0;
+  background-color: #c2dfff;
+}
+
+#index1 .featured img {
+  height: 40px;
+  width: 0 auto;
+}
+
+
 
 #index1 .aboutus .text-wrapper {
 color: black;
@@ -1144,6 +1375,27 @@ footer img {
 
 @media (max-width: 768px) {
 
+
+  #index1 .home1 h1 {
+    color: white;
+    text-align: center;
+    display: flex;
+    position:absolute;
+    top: 7%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #002750;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 20px;
+  }
+  
+  #index1 .home1 img {
+    height: 400px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+  }
   
 .anouncementbar {
     font-size: 15px;
@@ -1248,6 +1500,18 @@ margin-bottom: 10px;
   font-size: 15px;
   border-radius: 50px;
   margin-bottom: 10px;
+}
+
+#index1 .vistoen {
+  text-align: center;
+  background-color: red;
+  color: white;
+  padding: 8px 0 8px 0;
+}
+
+#index1 .featured img {
+  height: 30px;
+  width: 0 auto;
 }
 
 #index1 .trust1 img {
@@ -1400,6 +1664,28 @@ font-size: 14px;
 
 @media (max-width: 600px) {
 
+
+  #index1 .home1 h1 {
+    color: white;
+    text-align: center;
+    display: flex;
+    position:absolute;
+    top: 6.3%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #002750;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 16px;
+  }
+  
+  #index1 .home1 img {
+    height: 400px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+  }
+
   
   .anouncementbar {
     font-size: 15px;
@@ -1494,6 +1780,11 @@ font-size: 14px;
   font-size: 15px;
   border-radius: 50px;
   margin-bottom: 10px;
+}
+
+#index1 .featured img {
+  height: 25px;
+  width: 0 auto;
 }
 
 #index1 .trust1 img {
@@ -1635,6 +1926,8 @@ font-size: 12px;
 }
 }
 
+
+
 /*************** ESTILOS CONTACTO****************/
 
 #contacto {
@@ -1644,6 +1937,7 @@ justify-content:center;
 align-items:center;
 padding:2rem;
 font-size:1.2rem;
+font-family: var(--font);
 color: var(--textcolor);
 }
 
@@ -1664,6 +1958,7 @@ width: 50%;
 height: 50%;
 margin: 2rem;
 padding: 0.5rem;
+font-weight: bold;
 }
 
 #contacto h3{
@@ -1747,6 +2042,9 @@ margin: 1rem;
 padding: 2rem;
 text-align: center;
 }
+#contacto a:hover{
+  opacity: 0.5;
+}
 #contacto .aviso {
 font-size: 1rem;
 margin: 1rem;
@@ -1778,9 +2076,9 @@ margin:0;
 }
 
 #contacto .sugerencias { 
-  width: 60%;
-  margin: 10rem;
-  padding: 2rem;
+width: 60%;
+margin: 10rem;
+padding: 2rem;
 line-height: rem;
   }
   #contacto .sugerencias ul{ 
@@ -1789,9 +2087,9 @@ list-style-type: square;
       
   #contacto .sugerencias label{ 
 display:block;
- margin:1rem;
- width: 20%;
- text-align: center;
+margin:1rem;
+width: 20%;
+text-align: center;
     }
 
 /** botón leer mas, leer menos **/
@@ -1839,7 +2137,7 @@ display: inline-block;/*mosstrar el label leemas_menos cuando check esta activad
 
 /* Estilos para móviles */ 
 
-@media (max-width: 768px) { 
+@media (max-width: 600px) { 
   #contacto .formulario h3 {
 font-size: 1rem;
    }
@@ -1851,10 +2149,10 @@ width: 80%;
 width: 40%;
 }
 #contacto .formulario h3{
-ont-size: 2rem;
+font-size: 2rem;
 }
 #contacto .formulario input{
-  font-size: 1.2rem;
+font-size: 1.2rem;
 }
       
 }
@@ -1865,6 +2163,7 @@ ont-size: 2rem;
   flex-direction: column;
   height: 100%;
   font-style: normal;
+  font-family: var(--font);
   color: var(--textcolor);
   font-size: 1.2rem;
 }
@@ -1904,7 +2203,7 @@ margin:0.5rem;
 
 /* Estilos para móviles */ 
 
-@media (max-width: 768px) { 
+@media (max-width: 600px) { 
   #rgdp .proteccion-datos{
     width:100%;
 
