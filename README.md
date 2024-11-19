@@ -31,7 +31,7 @@ Finalizamos con la creación de un logo identificativo.
             
             Optamos por una paleta de colores azules alineada con los tonos representativos del club, asegurándonos de que evocaran el dinamismo del propio juego y profesionalidad.
 
-            ![colors](./images/Colores.jpg)
+  ![colors](./images/Colores.jpg)
 
             También seleccionamos tipografías modernas y fácilmente legibles, junto con imágenes que capturan la energía y pasión de sus actividades deportivas
 
@@ -41,25 +41,25 @@ Finalizamos con la creación de un logo identificativo.
 
             Home: Una página principal que presenta al club junto con las noticias mas importantes del momento y opiniones mas valoradas, con acceso rápido a las secciones más importantes.
 
-            ![home](./images/fullhome.png)
+![home](./images/fullhome.png)
 
             Tienda: Una sección donde los aficionados pueden adquirir merchandising oficial, como camisetas, accesorios y otros productos exclusivos.
 
-            ![tienda](./images/fulltienda.jpg)
-            ![tienda](./images/fulltienda1.jpg)
+![tienda](./images/fulltienda.jpg)
+![tienda](./images/fulltienda1.jpg)
 
             Clubs: Un espacio dinamico dedicado a los equipos del club, donde se detalla cada disciplina deportiva junto con sus respectivos jugadores y entrenadores.
 
-            ![clubs](./images/fullclubs.jpg)
+![clubs](./images/fullclubs.jpg)
 
             Nosotros: Una página para descubrir la historia del club, sus valores fundamentales y la comunidad que lo respalda junto con información sobre las cuotas de socio.
 
-            ![conocenos](./images/fullconocenos.jpg)
+ ![conocenos](./images/fullconocenos.jpg)
 
             Contacto: Un formulario de contacto intuitivo, junto con información de ubicación, redes sociales y otros canales de comunicación. 
                       En la misma pagina podemos encontrar un link que lleva a los terminos de politica de privacidad.
 
-            ![contacto](./images/fullcontacto.jpg)
+![contacto](./images/fullcontacto.jpg)
   
   **Implementación y Optimización:**
   
@@ -80,18 +80,18 @@ Con esta identidad web, el club está preparado para seguir creciendo, compartie
 <h2>🧑‍🤝‍🧑THE TEAM</h2>
 
 **Scrum Master**
-[scrum](https://github.com/SideWalk29)
+[Youssef](https://github.com/SideWalk29)
 
 **Product Owner**
-[owner](https://github.com/carlasiles1)
+[Carla](https://github.com/carlasiles1)
 
 **First Programmer**
-[first](https://github.com/Aleeza951)
+[Alezaa](https://github.com/Aleeza951)
 
 **Second Programmer**
-[second](https://github.com/githpaco)
+[Paco](https://github.com/githpaco)
 
 **Third Programmer**
-[thrid](https://github.com/naytxi)
+[Nay](https://github.com/naytxi)
 
 
