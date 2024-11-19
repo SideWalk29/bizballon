@@ -28,7 +28,7 @@
           <li class="menu"><a href="index.html">Home</a></li>
           <li class="menu"><a href="tienda.html">Tienda</a></li>
           <li class="menu"><a href="clubs.html">Clubs</a></li>
-          <li class="menu"><a href="conocenos.html">Conocenos</a></li>
+          <li class="menu"><a href="conocenos.html">Nosotros</a></li>
           <li class="menu"><a href="contacto.html">Contacto</a></li>
       </ul>
   </nav>
@@ -40,20 +40,22 @@
          <h2>Productos</h2>
          
           <div class="filtrosgaleria">
-     <!--    botones de filtrado por categorias -->
+		  <!--  filtros CSS: https://webdesign.tutsplus.com/how-to-build-a-filtering-component-in-pure-css--cms-33111t -->
+       <!--    botones de filtrado por categorias -->
  
-              <input type="radio" id="todos" name="button" name="categorias" value="todos" checked><label for="todos">todos</label>
-              <input type="radio" id="camiseta" name="button" name="categorias" value="camiseta"><label for="camiseta">camiseta</label>
-              <input type="radio" id="shorts" name="button" name="categorias" value="shorts"><label for="shorts">shorts</label>
-              <input type="radio" id="sudadera" name="button" name="categorias" value="sudadera"><label for="sudadera">sudadera</label>
-              <input type="radio" id="calcetines" name="button" name="categorias" value="calcetines"><label for="calcetines">calcetines</label>
-                
+              <input type="radio" id="todos" name="categorias" value="todos" checked><label for="todos">todos</label>
+              <input type="radio" id="camiseta" name="categorias" value="camiseta"><label for="camiseta">camiseta</label>
+              <input type="radio" id="shorts" name="categorias" value="shorts"><label for="shorts">shorts</label>
+              <input type="radio" id="sudadera" name="categorias" value="sudadera"><label for="sudadera">sudadera</label>
+              <input type="radio" id="calcetines" name="categorias" value="calcetines"><label for="calcetines">calcetines</label>
+			  
+             <!-- Grid:https://www.youtube.com/watch?v=El0OJ6h_2ZI -->
              <div class="galeria">
 
-             
+            
              <figure class="card" data-categoria="camiseta">
              <a class="modal-btn" href="#modal1">
-                <img src="images/camiseta_1.jpg" alt="modelo camiseta niño con logo de BBF" title="Camiseta niño BBF" class="card-imagen">
+                <img src="images/thumbnails/camiseta_1.jpg" alt="modelo camiseta niño con logo de BBF" title="Camiseta niño BBF" class="card-imagen">
               </a>
 			      	<div class="oferta">
                           <p>Ahora en oferta</p>
@@ -64,7 +66,7 @@
            
              <figure class="card" data-categoria="camiseta">  
               <a class="modal-btn" href="#modal2">
-                <img src="images/camiseta_2.png" alt="modelo camiseta mujer con logo de BBF" title="Camiseta mujer BBF" class="card-imagen">
+                <img src="images/thumbnails/camiseta_2.png" alt="modelo camiseta mujer con logo de BBF" title="Camiseta mujer BBF" class="card-imagen">
              </a>
                  <figcaption class="card-caption">camiseta BBF mujer </figcaption>
              </figure>
@@ -72,49 +74,49 @@
 
               <figure class="card" data-categoria="camiseta">  
                 <a class="modal-btn" href="#modal3">
-                <img src="images/camiseta_3.png" alt="modelo camiseta hombre con logo de BBF" title="Camiseta hombre BBF" class="card-imagen">
+                <img src="images/thumbnails/camiseta_3.png" alt="modelo camiseta hombre con logo de BBF" title="Camiseta hombre BBF" class="card-imagen">
                 </a>
                  <figcaption class="card-caption">camiseta BBF hombre</figcaption>
              </figure>
                 
              <figure class="card" data-categoria="shorts">
               <a class="modal-btn" href="#modal4">
-                 <img src="images/shorts_1.jpg" alt="modelo shorts niño con logo de BBF" title="Shorts niño BBF" class="card-imagen">
+                 <img src="images/thumbnails/shorts_1.jpg" alt="modelo shorts niño con logo de BBF" title="Shorts niño BBF" class="card-imagen">
               </a>
                   <figcaption class="card-caption">shorts BBF niño</figcaption>
              </figure>	
                  
               <figure class="card" data-categoria="shorts">
                 <a class="modal-btn" href="#modal5">	
-                 <img src="images/shorts_2.jpg" alt="modelo shorts mujer con logo de BBF" title="Shorts mujer BBF" class="card-imagen">
+                 <img src="images/thumbnails/shorts_2.jpg" alt="modelo shorts mujer con logo de BBF" title="Shorts mujer BBF" class="card-imagen">
                 </a>
                    <figcaption class="card-caption">shorts BBF mujer</figcaption>
              </figure>
                  
               <figure class="card" data-categoria="shorts">	
                 <a class="modal-btn" href="#modal6">
-                 <img src="images/shorts_3.png" alt="modelo shorts hombre con logo de BBF" title="Shorts hombre BBF" class="card-imagen">
+                 <img src="images/thumbnails/shorts_3.png" alt="modelo shorts hombre con logo de BBF" title="Shorts hombre BBF" class="card-imagen">
                 </a>
                    <figcaption class="card-caption">shorts BBF hombre</figcaption>
               </figure>	
                  
-              <figure class="card" data-categoria="sudadera">
+              <figure class="card sudadera" data-categoria="sudadera">
                 <a class="modal-btn" href="#modal7">
-                 <img src="images/sudadera_1.jpg" alt="modelo sudadera niño con logo de BBF" title="Sudadera niño BBF" class="card-imagen">
+                 <img src="images/thumbnails/sudadera_1.jpg" alt="modelo sudadera niño con logo de BBF" title="Sudadera niño BBF" class="card-imagen">
                 </a>
                      <figcaption class="card-caption">sudadera BBF niño</figcaption>
               </figure>	
                  
-             <figure class="card" data-categoria="sudadera">	
+             <figure class="card sudadera" data-categoria="sudadera">	
               <a class="modal-btn" href="#modal8">
-                 <img src="images/sudadera_2.png" alt="modelo sudadera mujer con logo de BBF" title="Sudadera mujer BBF" class="card-imagen">
+                 <img src="images/thumbnails/sudadera_2.png" alt="modelo sudadera mujer con logo de BBF" title="Sudadera mujer BBF" class="card-imagen">
                  </a>
                      <figcaption class="card-caption">sudadera BBF mujer</figcaption>
               </figure>	
                  
-             <figure class="card" data-categoria="sudadera">	
+             <figure class="card sudadera" data-categoria="sudadera">	
               <a class="modal-btn" href="#modal9">
-                 <img src="images/sudadera_3.png" alt="modelo sudadera hombre con logo de BBF" title="Sudadera hombre BBF" class="card-imagen">
+                 <img src="images/thumbnails/sudadera_3.png" alt="modelo sudadera hombre con logo de BBF" title="Sudadera hombre BBF" class="card-imagen">
                  </a>
                      <figcaption class="card-caption">sudadera BBF hombre</figcaption>
               </figure>	
@@ -122,14 +124,14 @@
                  
              <figure class="card" data-categoria="calcetines">
               <a class="modal-btn" href="#modal10">
-                <img src="images/calcetines_1.jpg" alt="modelo calcetines niño con logo de BBF" title="Calcetines niño BBF" class="card-imagen">
+                <img src="images/thumbnails/calcetines_1.jpg" alt="modelo calcetines niño con logo de BBF" title="Calcetines niño BBF" class="card-imagen">
                 </a>
                     <figcaption class="card-caption">calcetines BBF niño</figcaption>
               </figure>	
                 
                <figure class="card" data-categoria="calcetines">
                 <a class="modal-btn" href="#modal11">
-                <img src="images/calcetines_2.jpg" alt="modelo calcetines adulto con logo de BBF" title="Calcetines adulto BBF" class="card-imagen">
+                <img src="images/thumbnails/calcetines_2.jpg" alt="modelo calcetines adulto con logo de BBF" title="Calcetines adulto BBF" class="card-imagen">
                 </a>
                     <figcaption class="card-caption">calcetines BBF adulto</figcaption>
               </figure>	
@@ -138,7 +140,7 @@
             </div>
         </div>
         <!-- contenido ventanas modales-->
-            
+          <!-- Modal: https://webdesign.tutsplus.com/css-only-modal--cms-107772t -->
              <section role="dialog" aria-labelledby="modal-title" class="modal" id="modal1">
               <a class="modal-overlay" href="#" tabindex="-1"></a>
           
@@ -146,8 +148,8 @@
                 <a title="Close modal" aria-label="Close modal" href="#" class="modal-close">&times; </a>
                 <h2 id="modal-title1"> Camiseta niño</h2>
                 <div  class="modal-images">
-                <div><img src="images/camiseta_1.jpg" alt="modelo camiseta niño con logo de BBF" title="Camiseta niño BBF" class="imagen-modal" width="80%"></div>
-                <div><img src="images/camiseta_11.jpg" alt="modelo camiseta niño con logo de BBF espalda" title="Camiseta niño espalda BBF" class="imagen-modal" width="80%"></div>
+                <div><img src="images/thumbnails/camiseta_1.jpg" alt="modelo camiseta niño con logo de BBF" title="Camiseta niño BBF" class="imagen-modal" width="80%"></div>
+                <div><img src="images/thumbnails/camiseta_11.jpg" alt="modelo camiseta niño con logo de BBF espalda" title="Camiseta niño BBF, espalda" class="imagen-modal" width="80%"></div>
                </div>
                 <p>Camiseta de niño en tejido 100% algodón orgánico.</p>
                 <p> Algodón suave con tratamiento antipilling.</p>
@@ -162,8 +164,8 @@
                 <a title="Close modal" aria-label="Close modal" href="#" class="modal-close">&times; </a>
                 <h2 id="modal-title2"> Camiseta mujer</h2>
                 <div  class="modal-images">
-                <div><img src="images/camiseta_2.png" alt="modelo camiseta mujer con logo de BBF" title="Camiseta mujer BBF" class="imagen-modal" width="80%"></div>
-                <div><img src="images/camiseta_21.png" alt="modelo camiseta mujer con logo de BBF espalda" title="Camiseta mujer espalda BBF" class="imagen-modal" width="80%"></div>
+                <div><img src="images/thumbnails/camiseta_2.png" alt="modelo camiseta mujer con logo de BBF" title="Camiseta mujer BBF" class="imagen-modal" width="80%"></div>
+                <div><img src="images/thumbnails/camiseta_21.png" alt="modelo camiseta mujer con logo de BBF espalda" title="Camiseta mujer BBF, espalda" class="imagen-modal" width="80%"></div>
                </div>
                 <p>Camiseta de mujer de manga corta con escote pico.</p>
                 <p>Algodón suave, 100% orgánico.</p>
@@ -179,8 +181,8 @@
                 <a title="Close modal" aria-label="Close modal" href="#" class="modal-close">&times; </a>
                 <h2 id="modal-title3"> Camiseta hombre</h2>
                 <div  class="modal-images">
-                <div><img src="images/camiseta_3.png" alt="modelo camiseta hombre con logo de BBF" title="Camiseta hombre BBF" class="imagen-modal" width="80%"></div>
-                <div><img src="images/camiseta_31.png" alt="modelo camiseta hombre con logo de BBF espalda" title="Camiseta hombre espalda BBF" class="imagen-modal" width="80%"></div>
+                <div><img src="images/thumbnails/camiseta_3.png" alt="modelo camiseta hombre con logo de BBF" title="Camiseta hombre BBF" class="imagen-modal" width="80%"></div>
+                <div><img src="images/thumbnails/camiseta_31.png" alt="modelo camiseta hombre con logo de BBF espalda" title="Camiseta hombre BBF, espalda" class="imagen-modal" width="80%"></div>
                </div>
                 <p>Camiseta de hombre de manga.</p>
                 <p>Algodón suave, 100% orgánico.</p>
@@ -195,7 +197,7 @@
                 <a title="Close modal" aria-label="Close modal" href="#" class="modal-close">&times; </a>
                 <h2 id="modal-title4"> Shorts niño</h2>
                 <div  class="modal-images">
-                <div><img src="images/shorts_1.jpg" alt="modelo shorts niño con logo de BBF trasero" title="Shorts niño BBF" class="imagen-modal" width="80%"></div>
+                <div><img src="images/thumbnails/shorts_1.jpg" alt="modelo shorts niño con logo de BBF trasero" title="Shorts niño BBF" class="imagen-modal" width="80%"></div>
 
                </div>
                 <p>Shorts de niño en felpa, color gris vigoré.</p>
@@ -212,8 +214,8 @@
                 <a title="Close modal" aria-label="Close modal" href="#" class="modal-close">&times; </a>
                 <h2 id="modal-title5"> Shorts mujer</h2>
                 <div  class="modal-images">
-                <div><img src="images/shorts_2.jpg" alt="modelo shorts mujer con logo de BBF" title="Shorts mujer BBF" class="imagen-modal" width="80%"></div>
-                <div><img src="images/shorts_21.jpg" alt="modelo shorts mujer con logo de BBF trasero" title="Shorts mujer trasero BBF" class="imagen-modal" width="80%"></div>
+                <div><img src="images/thumbnails/shorts_2.jpg" alt="modelo shorts mujer con logo de BBF" title="Shorts mujer BBF" class="imagen-modal" width="80%"></div>
+                <div><img src="images/thumbnails/shorts_21.jpg" alt="modelo shorts mujer con logo de BBF trasero" title="Shorts mujer BBF, trasero" class="imagen-modal" width="80%"></div>
 
                </div>
                 <p>Shorts de mujer de tejido elástico.</p>
@@ -231,8 +233,8 @@
                 <a title="Close modal" aria-label="Close modal" href="#" class="modal-close">&times; </a>
                 <h2 id="modal-title6"> Shorts mujer</h2>
                 <div  class="modal-images">
-                <div><img src="images/shorts_3.png" alt="modelo shorts hombre con logo de BBF" title="Shorts hombre BBF" class="imagen-modal" width="80%"></div>
-                <div><img src="images/shorts_31.png" alt="modelo shorts hombre con logo de BBF trasero" title="Shorts hombre trasero BBF" class="imagen-modal" width="80%"></div>
+                <div><img src="images/thumbnails/shorts_3.png" alt="modelo shorts hombre con logo de BBF" title="Shorts hombre BBF" class="imagen-modal" width="80%"></div>
+                <div><img src="images/thumbnails/shorts_31.png" alt="modelo shorts hombre con logo de BBF trasero" title="Shorts hombre BBF, trasero" class="imagen-modal" width="80%"></div>
 
                </div>
                 <p>Shorts de hombre en felpa, color gris vigoré.</p>
@@ -251,7 +253,7 @@
                 <a title="Close modal" aria-label="Close modal" href="#" class="modal-close">&times; </a>
                 <h2 id="modal-title7"> Sudadera niño</h2>
                 <div  class="modal-images">
-                <div><img src="images/sudadera_1.jpg" alt="modelo sudadera niño con logo de BBF" title="Sudadera niño BBF" class="imagen-modal" width="80%"></div>
+                <div><img src="images/thumbnails/sudadera_1.jpg" alt="modelo sudadera niño con logo de BBF" title="Sudadera niño BBF" class="imagen-modal" width="80%"></div>
 
                </div>
                 <p>Shorts de niño con capuchan en tejido de felpa suave, en color azul marino.</p>
@@ -267,8 +269,8 @@
                 <a title="Close modal" aria-label="Close modal" href="#" class="modal-close">&times; </a>
                 <h2 id="modal-title8"> Sudadera mujer</h2>
                 <div  class="modal-images">
-                <div><img src="images/sudadera_2.png" alt="modelo sudadera mujer con logo de BBF" title="Sudadera mujer BBF" class="imagen-modal" width="80%"></div>
-                <div><img src="images/sudadera_21.png" alt="modelo sudadera mujer con logo de BBF espalda" title="Sudadera mujer espalda BBF" class="imagen-modal" width="80%"></div>
+                <div><img src="images/thumbnails/sudadera_2.png" alt="modelo sudadera mujer con logo de BBF" title="Sudadera mujer BBF" class="imagen-modal" width="80%"></div>
+                <div><img src="images/thumbnails/sudadera_21.png" alt="modelo sudadera mujer con logo de BBF espalda" title="Sudadera mujer BBF, espalda" class="imagen-modal" width="80%"></div>
 
                </div>
                 <p>Sudadera de mujer con capucha en tejido felpa suave.</p>
@@ -284,8 +286,8 @@
                 <a title="Close modal" aria-label="Close modal" href="#" class="modal-close">&times; </a>
                 <h2 id="modal-title9"> Sudadera hombre</h2>
                 <div  class="modal-images">
-                <div><img src="images/sudadera_3.png" alt="modelo sudadera hombre con logo de BBF" title="Sudadera hombre BBF" class="imagen-modal" width="80%"></div>
-                <div><img src="images/sudadera_31.png" alt="modelo sudadera hombre con logo de BBF espalda" title="Sudadera hombre espalda BBF" class="imagen-modal" width="80%"></div>
+                <div><img src="images/thumbnails/sudadera_3.png" alt="modelo sudadera hombre con logo de BBF" title="Sudadera hombre BBF" class="imagen-modal" width="80%"></div>
+                <div><img src="images/thumbnails/sudadera_31.png" alt="modelo sudadera hombre con logo de BBF espalda" title="Sudadera hombre BBF, espalda" class="imagen-modal" width="80%"></div>
 
                </div>
                 <p>Sudadera de hombre con capucha en tejido felpa suave.</p>
@@ -301,7 +303,7 @@
                 <a title="Close modal" aria-label="Close modal" href="#" class="modal-close">&times; </a>
                 <h2 id="modal-title10"> Calcetines de niño</h2>
                 <div  class="modal-images">
-                <div><img src="images/calcetines_1.jpg" alt="modelo calcetines de niño con logo de BBF" title="Calcetines de niño BBF" class="imagen-modal" width="80%"></div>
+                <div><img src="images/thumbnails/calcetines_1.jpg" alt="modelo calcetines de niño con logo de BBF" title="Calcetines de niño BBF" class="imagen-modal" width="80%"></div>
                 
 
                </div>
@@ -319,7 +321,7 @@
                 <a title="Close modal" aria-label="Close modal" href="#" class="modal-close">&times; </a>
                 <h2 id="modal-title11"> Calcetines de niño</h2>
                 <div  class="modal-images">
-                <div><img src="images/calcetines_2.jpg" alt="modelo calcetines de adultocon logo de BBF" title="Calcetines de adulto BBF" class="imagen-modal" width="80%"></div>
+                <div><img src="images/thumbnails/calcetines_2.jpg" alt="modelo calcetines de adultocon logo de BBF" title="Calcetines de adulto BBF" class="imagen-modal" width="80%"></div>
                 
 
                </div>

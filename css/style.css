@@ -38,10 +38,7 @@ body::before {
 }
 
 
-/*************** ESTILOS HEADER****************/
-
-
-
+/*************** ESTILOS TIENDA ****************/
 /*************** ESTILOS TIENDA ****************/
 #tienda{
   display:flex;
@@ -101,15 +98,19 @@ text-decoration:none;
 }
 
 /* Si el input con value=todos esta chequeado se muestran todas los figures */
-[value="todos"]:checked ~ .galeria [data-categoria] {
+/* #tienda [value="todos"]:checked ~ .galeria [data-categoria] {
   display: block;
-}
-
+}*/
+/* filtros CSS: https://webdesign.tutsplus.com/how-to-build-a-filtering-component-in-pure-css--cms-33111t */
 /* Se ocultan los figures cuyas data-categoria no coincida con el del input chequeado */
 
 #tienda [value="camiseta"]:checked ~ .galeria figure:not([data-categoria="camiseta"]),
-#tienda [value="shorts"]:checked ~ .galeria figure:not([data-categoria="shorts"]),
-#tienda [value="sudadera"]:checked ~ .galeria figure:not([data-categoria="sudadera"]),
+/*#tienda [value="shorts"]:checked ~ .galeria figure:not([data-categoria="shorts"]),*/
+/*** uso de :has para hacer el filtro "cualquier descendiente" ***/
+*:has(#tienda [value="shorts"]:checked) .galeria figure:not([data-categoria="shorts"]),
+/*#tienda [value="sudadera"]:checked ~ .galeria figure:not([data-categoria="sudadera"]),*/
+/*** filtro con clase ***/
+#tienda [type="radio"]:nth-of-type(4):checked ~ .galeria .card:not(.sudadera),
 #tienda [value="calcetines"]:checked ~ .galeria figure:not([data-categoria="calcetines"])
 {
   display: none;
@@ -117,11 +118,16 @@ text-decoration:none;
 
  /* estilos de la galeria de productos */
 #tienda  .galeria{
-  display: grid;
-  justify-content: center;
-  grid-template-columns: repeat(auto-fit, 300px);
-  grid-auto-rows: 1fr;
-  grid-gap: 1rem;
+  display: grid;/*coloca elementos en cuadricula*/
+  justify-content: center;/* centra horizontalmente*/
+  grid-template-columns: repeat(auto-fit, 300px);/* se crean tantas columnas de 300px como sea posible encajar en el espacio disponible para el grid*/
+  /*grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  /*auto-fill significa que la cuadrícula intentará "llenar automáticamente" el espacio disponible con tantas columnas como quepan*/
+  /*cada columna tendrá como mínimo 300px de ancho, pero si hay más espacio en el contenedor, /*
+  /*las columnas podrán crecer para llenar ese espacio (hasta un máximo de 1 fracción del ancho disponible)*/
+  /*https://www.youtube.com/watch?v=El0OJ6h_2ZI */
+  grid-auto-rows: 1fr;/*alto de la fila = 1 fracción del espacio de alto del viewport disponible*/
+  grid-gap: 1rem;/*espacio entre filas y columnas*/
   padding: 0.5rem;
   margin-top: 1rem;
 }
@@ -140,14 +146,15 @@ text-decoration:none;
 #tienda figure:hover .oferta {
   opacity: 0.8;
   transition: all 0.5s ease;
-
-  p {
-	color:var(--colortextodestacado);
-	background-color:Aquamarine;
-    transform: scale(1.8);
-    transition: all 0.9s ease;
-  }
 }
+
+#tienda figure:hover .oferta p {
+  color: var(--colortextodestacado);
+  background-color: Aquamarine;
+  transform: scale(1.8);
+  transition: all 0.9s ease;
+}
+
  #tienda .card{
   margin: 0;
   color: var(--colortextodestacado);
@@ -178,7 +185,7 @@ text-decoration:none;
 }
 
 
-
+/** Modal: https://webdesign.tutsplus.com/css-only-modal--cms-107772t **/
 /*** estilos para el modal ***/
 #tienda .modal {
   position: fixed;
@@ -278,7 +285,7 @@ transform: scale(1.5);
   top: 10px;
 }
 /** animación para mostrar el modal **/
-/*se oculta*/
+/*se oculta, se hace transparente*/
 @keyframes fadeOut {
   from {
     opacity: 1;
@@ -288,7 +295,7 @@ transform: scale(1.5);
     opacity: 0;
   }
 }
-/*se muestra*/
+/*se muestra, se hace visible*/
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -298,7 +305,7 @@ transform: scale(1.5);
     opacity: 1;
   }
 }
-/*se mueve desde fuera del viewport al punto y=o*/
+/*se mueve desde fuera del viewport al punto y=o, se hace visible*/
 @keyframes slideUp {
   from {
     transform: translateY(100vh);
@@ -308,7 +315,7 @@ transform: scale(1.5);
     transform: translateY(0);
   }
 }
-/*se mueve desde fuera el viewport hasat furea de el*/
+/*se mueve desde fuera el viewport hasta afuera de él*/
 @keyframes slideDown {
   from {
     transform: translateY(0);
@@ -339,10 +346,10 @@ transform: scale(1.5);
 @media only screen and (min-width: 600px) and (max-width: 768px){ 
   #tienda main h1{
     font-size:3.2rem;
-    color:red;
   }
 
 }
+
 
   /*************** ESTILOS CLUBS ****************/
 
@@ -544,7 +551,7 @@ transform: scale(1.5);
   }
   100% {
     transform: translate(0%, 0%) scale(1);
-    opacity: 1;
+    opacity: 0.5;
   }
 }
  #clubs .balon { /*estilo de la animación del balón al principio de la pagina*/
@@ -765,9 +772,10 @@ font-size: 0.5rem;
   text-align: center;
   }
   
-  #nosotros h3 {
-    text-align: center;
-  }
+  
+#nosotros h3 {
+  text-align: center;
+}
 
 #nosotros .contenido{
   display: flex;
@@ -783,6 +791,7 @@ font-size: 0.5rem;
   flex: 1;
   padding:20px;
 } 
+
 #nosotros .btn-section {
   display: inline-block;  
   padding: 0.5rem;
@@ -863,6 +872,10 @@ font-size: 0.5rem;
   background-color: #e1e7ec; 
 }
 
+#quienes-somos, #mision-valores, #historia, #hazte-socio {
+  scroll-margin-top: 120px; 
+}
+
 #nosotros .pic-carrusel {
   display: flex;
   overflow: hidden;
@@ -881,6 +894,14 @@ font-size: 0.5rem;
 
 }
 
+#nosotros .pic-carrusel {
+  animation: scroll-carrusel 50s linear infinite;
+}
+
+#nosotros .pic-carrusel:hover {
+  animation-play-state: paused; 
+}
+
 @keyframes scroll-carrusel {
   0% {
     transform: translateX(0%); 
@@ -890,14 +911,6 @@ font-size: 0.5rem;
   }
 }
 
-
-#nosotros .pic-carrusel {
-  animation: scroll-carrusel 50s linear infinite;
-}
-
-#nosotros .pic-carrusel:hover {
-  animation-play-state: paused; 
-}
 
 @media (max-width: 600px) {
   #nosotros .contenido {
@@ -985,6 +998,62 @@ font-size: 0.5rem;
   list-style-type: none;
 }
 
+#index1 .homeimage {
+  display: flex;
+  justify-content: space-around;
+  background-color: white;
+  gap: 5px;
+  border: 3px white solid;
+}
+
+#index1 .home1 img {
+  height: 250px;
+  width: 33%;
+  margin: 0 auto;
+  display: flex;
+}
+
+#index1 .home1 h1 {
+  color: white;
+  text-align: center;
+  display: flex;
+  position:absolute;
+  top: 7%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #002750;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+#index1 .home1 h1 {
+  cursor: pointer;
+}
+
+#dialog {
+  justify-self: center;
+  position:absolute;
+  top: 27%;
+  transform: translateX(0%);
+}
+
+#dialog p {
+  font-size: 20px;
+  text-align: center;
+}
+
+#dialog button {
+  border-style: none;
+  display: flex;
+  text-align: center;
+  justify-self: center;
+  margin: 15px 0 5px 0;
+  padding: 5px 10px 5px 10px;
+  border: 1px solid black;
+  border-radius: 4px;
+}
+
+
 table {
   justify-self: center;
   border-collapse: collapse;
@@ -1008,7 +1077,7 @@ dialog {
   border: 1px solid black;
   border-radius: 5px;
   padding: 10px;
-  width: 300px;
+  width: 400px;
 }
 
 .anouncementbar {
@@ -1061,25 +1130,7 @@ dialog {
   transition: 1s ease;
 }
 
-#index1 .home1 h1 {
-  color: white;
-  text-align: center;
-  display: flex;
-  position:absolute;
-  top: 10%;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #002750;
-  padding: 10px;
-  border-radius: 10px;
-}
 
-#index1 .home1 img {
-  height: 600px;
-  width: 100%;
-  margin: 0 auto;
-  display: flex;
-}
 
 .header1 .ul1 a:hover {
 transform: scale(0.95);
@@ -1381,7 +1432,7 @@ footer img {
     text-align: center;
     display: flex;
     position:absolute;
-    top: 7%;
+    top: 4.5%;
     left: 50%;
     transform: translateX(-50%);
     background-color: #002750;
@@ -1389,14 +1440,23 @@ footer img {
     border-radius: 10px;
     font-size: 20px;
   }
+
+  
+  #index1 .homeimage {
+    display: flex;
+    justify-content: space-around;
+    background-color: white;
+    gap: 5px;
+    border: 3px white solid;
+  }
   
   #index1 .home1 img {
-    height: 400px;
-    width: 100%;
+    height: 160px;
+    width: 33%;
     margin: 0 auto;
     display: flex;
   }
-  
+
 .anouncementbar {
     font-size: 15px;
 }
@@ -1457,6 +1517,7 @@ footer img {
   top: 28px;
   right: 30px;
   z-index:1;
+  cursor: pointer;
 }
 
 .header1 .menu-toggle {
@@ -1481,9 +1542,21 @@ footer img {
 }
 
 .header1 .menu-toggle:checked + .menu-icon + .ul1 {
-display: flex;
+display: block;
 line-height: 40px;
 margin-bottom: 10px;
+}
+
+#dialog {
+  justify-self: center;
+  position:absolute;
+  top: 30%;
+  transform: translateX(0%);
+}
+
+#dialog p {
+  font-size: 17px;
+  text-align: center;
 }
 
 #index1 .aboutus .text-wrapper {
@@ -1670,7 +1743,7 @@ font-size: 14px;
     text-align: center;
     display: flex;
     position:absolute;
-    top: 6.3%;
+    top: 4%;
     left: 50%;
     transform: translateX(-50%);
     background-color: #002750;
@@ -1680,13 +1753,21 @@ font-size: 14px;
   }
   
   #index1 .home1 img {
-    height: 400px;
-    width: 100%;
+    height: 150px;
+    width: 33,33%;
     margin: 0 auto;
     display: flex;
   }
 
-  
+  #index1 .homeimage {
+    display: flex;
+    justify-content: space-around;
+    background-color: white;
+    gap: 5px;
+    border: 3px white solid;
+  }
+
+
   .anouncementbar {
     font-size: 15px;
 }
@@ -1765,6 +1846,29 @@ font-size: 14px;
   margin-bottom: 10px;
   }
   
+  
+  #dialog {
+    justify-self: center;
+    position:absolute;
+    top: 28%;
+    transform: translateX(0%);
+  }
+  
+  #dialog p {
+    font-size: 16px;
+    text-align: center;
+  }
+  
+  #dialog button {
+    border-style: none;
+    display: flex;
+    text-align: center;
+    justify-self: center;
+    margin: 15px 0 5px 0;
+    padding: 5px 10px 5px 10px;
+    border: 1px solid black;
+    border-radius: 4px;
+  }
 
 #index1 .aboutus .text-wrapper {
   font-size: 55px;
@@ -2153,6 +2257,28 @@ font-size: 2rem;
 }
 #contacto .formulario input{
 font-size: 1.2rem;
+}
+      
+}
+
+/* Estilos para tablet */ 
+
+@media (max-width: 768px) { 
+  #contacto .formulario h3 {
+font-size: 1.5rem;
+   }
+#contacto .sugerencias { 
+font-size: 1.6rem;
+width: 90%;
+}
+#contacto .sugerencias label{ 
+width: 50%;
+}
+#contacto .formulario h3{
+font-size: 2.5rem;
+}
+#contacto .formulario input{
+font-size: 1.6rem;
 }
       
 }
