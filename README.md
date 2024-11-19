@@ -93,5 +93,3 @@ Con esta identidad web, el club está preparado para seguir creciendo, compartie
 
 **Third Programmer**
 [Nay](https://github.com/naytxi)
-
-
